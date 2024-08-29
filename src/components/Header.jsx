@@ -2,14 +2,99 @@ import React, { useContext, useRef, useEffect } from 'react'
 import { UserContext } from '../App'
 import { ScrollContext } from '../App';
 
+
+// Tech object: 
+// tech { "category": ["tech1", "tech2"] }
+// --------category: Backend, Frontend, Other
+// links { "type": "url" }
+// ---------type: try_demo, try_prod (red), app_store, github, read_more, other string (normal)
+// media/logo ["url"] (filename or path from /src/assets/media/)
+//
+// For design projects:  
+// designed_in ["designappname"]
+
+
 const arr = [
-    {id: 0, title: "ZLab", body: "tasdasdasd"},
-    {id: 1, title: "3D Print website", body: "tasdasdasd"},
-    {id: 2, title: "3D print website", body: "tasdasdasd"},
-    {id: 3, title: "hei", body: "tasdasdasd"}
+    {id: 0, title: "ZLab", description: "Webapp for 3D-print on-demand service",
+        description: "ZLab is a concept webapp designed for a 3D-print on-demand service. The USP of the application is it's automatic quote calculator that accurately determines the quantity of material required for a model.",
+        tech: {
+            "Backend": [".Net 8"],
+            "Frontend": ["MVVM", "Razor Views", "Bootstrap", "Three.JS"],
+            "Others": ["Self-hosted", "SQLite", "ASP.NET Identity", "Email Sender with Brevo", "Localization", "Custom bash-scripts slice and parse g-code"]
+        }, 
+        links: {
+            "try_demo": "https://zlab.no"
+        },
+        media: [
+            "zlab_demo_1.jpg"
+            ]
+    },
+    {id: 1, title: "Pasty keyboard", description: "iOS/iPadOS keyboard",
+        description: "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field",
+        tech: {
+            "Backend": ["Swift", "UIKit"],
+            "Frontend": ["SwiftUI"],
+            "Others": ["SwiftData"]
+        }, 
+        links: {
+            "app_store": "https://apps.apple.com/app/pasty-keyboard/id6499453192",
+            "read_more": "https://stilian.dev/Pasty/"
+        },
+        logo: ["pasty_logo_1.jpeg"],
+        media: ["pasty_1.jpeg"]
+    },
+    {id: 2, title: "EPS VR Demo",  description: "Designed for generic HMDs",
+        description: "The application allows the user to look around a simulation of one of my prototypes collecting floating trash in the ocean. It runs on Unity using a custom camera rig controller that addresses the shortcomings of the headset used - including IPD adjustment in software and gyroscope-based tracking (as opposed to true spatial tracking).",
+        tech: {
+            "Backend": ["Unity3D"],
+            "Others": ["SwiftData"]
+            //TODO: add design tools
+        },
+        media: ["vr_trash_demo_1.mov"]
+    },
+    {id: 3, title: "Pasty keyboard", description: "iOS/iPadOS keyboard",
+        description: "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field",
+        tech: {
+            "Backend": ["Swift", "UIKit"],
+            "Frontend": ["SwiftUI"],
+            "Others": ["SwiftData"]
+        }, 
+        links: {
+            "app_store": "https://apps.apple.com/app/pasty-keyboard/id6499453192",
+            "read_more": "https://stilian.dev/Pasty/"
+        },
+        logo: ["pasty_logo_1.jpeg"],
+        media: ["pasty_1.jpeg"]
+    },
+    {id: 4, title: "Pasty keyboard", description: "iOS/iPadOS keyboard",
+        description: "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field",
+        tech: {
+            "Backend": ["Swift", "UIKit"],
+            "Frontend": ["SwiftUI"],
+            "Others": ["SwiftData"]
+        }, 
+        links: {
+            "app_store": "https://apps.apple.com/app/pasty-keyboard/id6499453192",
+            "read_more": "https://stilian.dev/Pasty/"
+        },
+        logo: ["pasty_logo_1.jpeg"],
+        media: ["pasty_1.jpeg"]
+    },
+    {id: 5, title: "Pasty keyboard", description: "iOS/iPadOS keyboard",
+        description: "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field",
+        tech: {
+            "Backend": ["Swift", "UIKit"],
+            "Frontend": ["SwiftUI"],
+            "Others": ["SwiftData"]
+        }, 
+        links: {
+            "app_store": "https://apps.apple.com/app/pasty-keyboard/id6499453192",
+            "read_more": "https://stilian.dev/Pasty/"
+        },
+        logo: ["pasty_logo_1.jpeg"],
+        media: ["pasty_1.jpeg"]
+    },
 ];
-
-
 
 const Header = () => {
     const { currentCardId } = useContext(UserContext);
