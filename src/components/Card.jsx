@@ -28,8 +28,8 @@ const Card = React.forwardRef(({ item }, ref) => {
       <div className='flex flex-col gap-2 min-w-full'> 
         <div className='col-span-2 flex flex-wrap grid-cols-6 gap-2 p-4 items-center flex-grow' > 
           {item.logo && (
-            <div className=''> 
-              <img src={`/src/assets/media/${item.logo}`} className=' w-fit max-h-[10vh] rounded-lg'/>
+            <div> 
+              <img src={`/src/assets/media/${item.logo}`} className=' w-auto max-h-[10vh] rounded-lg'/>
             </div>
           )}
           <div className=' shrink-0 w-auto'> <h1 className='text-4xl font-bold'> {item.title} </h1> 
@@ -75,26 +75,39 @@ const Card = React.forwardRef(({ item }, ref) => {
             </div>
           )}
             {item.media && item.media.length > 0 && (
-              item.media.map(([title, media]) => {
+              item.media.map(([title, media, aspectRatio], index) => {
               const extension = media.split(".").pop();  // Get file extension
-                if (extension === "mov") {
+                if (extension === "mp4") {
                   return (
-                    <div key={title} className={`flex-none 
+                    <div key={index} className={`flex-none w-fit
                     {title ? "max-w-[70vw]" : "max-w-[80vw]"} 
                     max-h-full snap-start`}>
-                      <video controls className="w-full h-full">
-                        <source src={`/src/assets/media/${media}`} type='video/quicktime' />
+                      {title && (
+                        <p className='text-center font-thin text-xl h-[5%]'> {title} </p>
+                      )}
+                      <video controls 
+                        className={`${title ? 'h-[95%]' : 'h-full'} w-full object-contain`}>
+                        <source src={`/src/assets/media/${media}`} type='video/mp4' />
                         Your browser does not support this video format.
                       </video>
                     </div>
                   );
                 } else {
                 return (
-                  <div key={title} className='flex-none max-w-[80vw] max-h-full snap-start'>
+                  <div key={index} className={`flex-none max-w-[80%] 
+                  max-h-full snap-start`}>
                       {title && (
-                        <p className='text-center font-thin text-xl h-[5%]'> {title} </p>
+                        <p className='text-center font-thin text-xl h-[5%] mb-[5%] w-fit'> {title + ":" + aspectRatio} </p>
                       )} 
-                    <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} className={`${title ? 'h-[95%]' : 'h-full'} w-full border-2 border-slate-500 rounded-lg object-contain`} />
+                    <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} 
+                      className={` 
+                        //Set dimensions based on aspect ratio and title (to accomodate title height) 
+                        
+                      ${aspectRatio == "p" && (title ? 'h-[92%] w-auto' : 'h-[100%]')} // portrait
+                      ${aspectRatio == "s" && (title ? 'max-w-[90%] h-auto max-h-[90%]' : 'max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
+                      ${aspectRatio == "l" && (title ? 'w-[100%] h-auto max-h-[90%]' : 'w-[100%] h-auto max-h-[90%] my-[5%]')} // square
+                      ${aspectRatio == undefined && (title ? 'max-h-[90%] max-w-[90%] w-auto h-auto' : 'max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // square
+                      border-2 border-slate-500 rounded-lg`} />
                   </div>
                 );
               }
@@ -107,31 +120,31 @@ const Card = React.forwardRef(({ item }, ref) => {
             console.log(linkKey)
             if (linkKey == 'app_store') { 
               return (
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-lg grow lg:max-w-[33%]">
+                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-lg grow lg:max-w-[33%]">
                     AppStore 
                   </button> 
               )
             } else if (linkKey == 'try_demo') {
               return (
-                  <button class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                  <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
                     try demo
                   </button>
               )
             } else if (linkKey == 'try_prod') {
               return (
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
                   try prod
                 </button>
               )
             } else if (linkKey == 'read_more') {
               return (
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
                   read more
                 </button>
               )
             } else {
               return (
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
                   Other
                 </button>
               )
