@@ -15,8 +15,9 @@ function App() {
   return (
     <ScrollContext.Provider value={{scrollY, setScrollY}}>
       <UserContext.Provider value={{currentCardId: currentCardId, setCurrentCardId: setCurrentCardId}}>
-        <Header/>
-        <Main/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+          <Header/>
+          <Main/>
       </UserContext.Provider>
     </ScrollContext.Provider>
   )

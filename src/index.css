@@ -34,9 +34,6 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
   background: linear-gradient(75deg, var(--primary) 40%, var(--accent));
   animation: spinBackground 1s linear;
 }
-/* 
-.card-covered {
-} */
 
 @keyframes spinBackground {
   0% {background: linear-gradient(160deg, var(--primary) 20%, var(--accent));}

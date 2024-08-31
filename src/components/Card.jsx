@@ -1,59 +1,151 @@
 import React, { useState } from 'react'
+import { Button } from "@material-tailwind/react";
 
-const Card = React.forwardRef(({id, title, body, isCovered}, ref) => {
+
+// Tech object: 
+// int id, string title, (short)description, body, [string:string[]] tech, [string:string] links, string[] media  
+// tech { "category": ["tech1", "tech2"] }
+// --------category: Backend, Frontend, Other
+// links { "type": "url" }
+// ---------type: try_demo, try_prod (red), app_store, github, read_more, other string (normal)
+// media/logo ["url"] (filename or path from /src/assets/media/)
+//
+// For design projects:  
+// designed_in ["designappname"]
+
+const Card = React.forwardRef(({ item }, ref) => {
+  const [galleryTitle, setGalleryTitle] = useState()
+  console.log(item)
   return (
-    <div ref={ref} id={id} 
-    className={`snap-start shrink-0
-    border-black border-2 rounded-lg
-    sticky ${positionValues[id]}
-    bg-slate-100 shadow-xl 
-    mt-4 p-4 h-[80vh] w-[80vw] mx-[9vw]
-    card
-    // ${isCovered ? 'card-covered' : 'card'}
+    <div ref={ref} id={item.id}
+      className={`snap-start shrink-0 border-black border-2 rounded-lg
+      bg-slate-100 shadow-xl p-4 h-[90vh] w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
+      flex flex-row justify-around
+      mt-10 order-1  
+      card
     `}>
-      <h1>{id}:{title} </h1>
-      <p>{body} </p>
+
+      <div className='flex flex-col gap-2 min-w-full'> 
+        <div className='col-span-2 flex flex-wrap grid-cols-6 gap-2 p-4 items-center flex-grow' > 
+          {item.logo && (
+            <div className=''> 
+              <img src={`/src/assets/media/${item.logo}`} className=' w-fit max-h-[10vh] rounded-lg'/>
+            </div>
+          )}
+          <div className=' shrink-0 w-auto'> <h1 className='text-4xl font-bold'> {item.title} </h1> 
+          <h2 className='text-xl text-slate-500'> {item.description} </h2>  
+          </div> 
+        </div>
+        <div className='col-span-full  p-4 text-xl lg:max-w-[70%] xl:max-w[60%] flex-grow' > <p> {item.body} </p> </div>
+        {item.designed_in && item.designed_in.length > 0 && (
+          <div className='col-span-fullp-4' >
+            <h1 className='text-2xl font-bold py-2'> Designed using </h1>
+            <ul>
+              {item.designed_in.map((value) => (
+                <li key={value}>
+                  <ul className='list-disc pl-4'>
+                    <p> {value} </p>
+                  </ul>
+                </li>
+              ))}
+            </ul>   
+          </div>
+        )}
+
+        <div className='col-span-full flex grow w-[100%] max-h-[70%]
+        overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6
+        ' > 
+        {item.tech && Object.keys(item.tech).length > 0 && (
+            <div className='flex-none max-w-[80vw] lg:max-w-[70vw] max-h-full snap-start
+            border-y-4 border-slate-200 pl-2 overflow-y-scroll
+            '>
+              <h1 className='text-4xl font-semibold pt-4 pb-6'> Technologies</h1>
+              <ul>
+                {Object.entries(item.tech).map(([techKey, techValues]) => (
+                  <li key={techKey}>
+                    <h2 className='text-xl font-light w-[50%] border-t-2 border-slate-400 '>{techKey}</h2>
+                    <ul className='list-disc pl-4 mb-4'>
+                      {techValues.map((techItem, index) => (
+                        <li key={index} className='text-xl font-extralight'>{techItem}</li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+            {item.media && item.media.length > 0 && (
+              item.media.map(([title, media]) => {
+              const extension = media.split(".").pop();  // Get file extension
+                if (extension === "mov") {
+                  return (
+                    <div key={title} className={`flex-none 
+                    {title ? "max-w-[70vw]" : "max-w-[80vw]"} 
+                    max-h-full snap-start`}>
+                      <video controls className="w-full h-full">
+                        <source src={`/src/assets/media/${media}`} type='video/quicktime' />
+                        Your browser does not support this video format.
+                      </video>
+                    </div>
+                  );
+                } else {
+                return (
+                  <div key={title} className='flex-none max-w-[80vw] max-h-full snap-start'>
+                      {title && (
+                        <p className='text-center font-thin text-xl h-[5%]'> {title} </p>
+                      )} 
+                    <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} className={`${title ? 'h-[95%]' : 'h-full'} w-full border-2 border-slate-500 rounded-lg object-contain`} />
+                  </div>
+                );
+              }
+            }))
+          }
+        </div>
+
+        <div className='col-span-full flex p-4 gap-2 space-x-4 place-content-center' > 
+          {item.links && Object.keys(item.links).map((linkKey, linkValue) => {
+            console.log(linkKey)
+            if (linkKey == 'app_store') { 
+              return (
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-lg grow lg:max-w-[33%]">
+                    AppStore 
+                  </button> 
+              )
+            } else if (linkKey == 'try_demo') {
+              return (
+                  <button class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                    try demo
+                  </button>
+              )
+            } else if (linkKey == 'try_prod') {
+              return (
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                  try prod
+                </button>
+              )
+            } else if (linkKey == 'read_more') {
+              return (
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                  read more
+                </button>
+              )
+            } else {
+              return (
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
+                  Other
+                </button>
+              )
+            }
+          })}
+        
+        </div>
+      </div>
+
     </div>
-  )
-}
-)
+  );
+});
 
-//TODO:
-//Kan sikkert gjøres programatically, men tailwind likte ikke template literals (feks top-[${id}])
-
-const positionValues = [
-  "z-[0] top-[3vh] mt-[1vh]",
-  "z-[1] top-[4vh] mt-[2vh]",
-  "z-[2] top-[5vh] mt-[3vh]",
-  "z-[3] top-[6vh] mt-[4vh]",
-  "z-[4] top-[7vh] mt-[5vh]",
-  "z-[5] top-[8vh] mt-[6vh]",
-  "z-[6] top-[9vh] mt-[7vh]",
-  "z-[7] top-[10vh] mt-[8vh]",
-  "z-[8] top-[11vh] mt-[9vh]",
-  "z-[9] top-[12vh] mt-[10vh]",
-  "z-[10] top-[13vh] mt-[11vh]",
-  "z-[11] top-[14vh] mt-[12vh]",
-  "z-[12] top-[15vh] mt-[13vh]",
-  "z-[13] top-[16vh] mt-[14vh]",
-  "z-[14] top-[17vh] mt-[15vh]",
-  "z-[15] top-[18vh] mt-[16vh]",
-  "z-[16] top-[19vh] mt-[17vh]",
-  "z-[17] top-[20vh] mt-[18vh]",
-  "z-[18] top-[21vh] mt-[19vh]",
-  "z-[19] top-[22vh] mt-[20vh]",
-  "z-[20] top-[23vh] mt-[21vh]",
-  "z-[21] top-[24vh] mt-[22vh]",
-  "z-[22] top-[25vh] mt-[23vh]",
-  "z-[23] top-[26vh] mt-[24vh]",
-  "z-[24] top-[27vh] mt-[25vh]",
-  "z-[25] top-[28vh] mt-[26vh]",
-  "z-[26] top-[29vh] mt-[27vh]",
-  "z-[27] top-[30vh] mt-[28vh]",
-  "z-[28] top-[31vh] mt-[29vh]",
-  "z-[29] top-[32vh] mt-[30vh]",
-  "z-[30] top-[33vh] mt-[31vh]",
-]
 
 export default Card
+
 

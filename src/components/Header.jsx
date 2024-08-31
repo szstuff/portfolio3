@@ -150,10 +150,9 @@ const Header = () => {
                         }
                     </div>
                 </div>
-                    <li> 1</li>
-                    <li> 2</li>
-                    <li> 3</li>
-                    <li> 4</li>
+                    <li className='px-3'> github</li>
+                    <li className='px-3'> linkedin</li>
+                    <li className='px-3'> contact</li>
                 </div>
             </div>
     </nav>
