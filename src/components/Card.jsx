@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from "@material-tailwind/react";
+import Button from "./Button";
 
 
 // Tech object: 
@@ -14,14 +14,12 @@ import { Button } from "@material-tailwind/react";
 // designed_in ["designappname"]
 
 const Card = React.forwardRef(({ item }, ref) => {
-  const [galleryTitle, setGalleryTitle] = useState()
-  console.log(item)
   return (
     <div ref={ref} id={item.id}
       className={`snap-start shrink-0 border-black border-2 rounded-lg
-      bg-slate-100 shadow-xl p-4 h-[90vh] w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
+      bg-slate-100 shadow-xl p-4 h-[85vh] w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
       flex flex-row justify-around
-      mt-10 order-1  
+      mt-5 order-1  
       card
     `}>
 
@@ -32,7 +30,7 @@ const Card = React.forwardRef(({ item }, ref) => {
               <img src={`/src/assets/media/${item.logo}`} className=' w-auto max-h-[10vh] rounded-lg'/>
             </div>
           )}
-          <div className=' shrink-0 w-auto'> <h1 className='text-4xl font-bold'> {item.title} </h1> 
+          <div className=' shrink-0 w-auto'> <h1 className='text-4xl font-bold'> {item.id + ':' + item.title} </h1> 
           <h2 className='text-xl text-slate-500'> {item.description} </h2>  
           </div> 
         </div>
@@ -115,43 +113,11 @@ const Card = React.forwardRef(({ item }, ref) => {
           }
         </div>
 
-        <div className='col-span-full flex p-4 gap-2 space-x-4 place-content-center' > 
-          {item.links && Object.keys(item.links).map((linkKey, linkValue) => {
-            console.log(linkKey)
-            if (linkKey == 'app_store') { 
-              return (
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-lg grow lg:max-w-[33%]">
-                    AppStore 
-                  </button> 
-              )
-            } else if (linkKey == 'try_demo') {
-              return (
-                  <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
-                    try demo
-                  </button>
-              )
-            } else if (linkKey == 'try_prod') {
-              return (
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
-                  try prod
-                </button>
-              )
-            } else if (linkKey == 'read_more') {
-              return (
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
-                  read more
-                </button>
-              )
-            } else {
-              return (
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%]">
-                  Other
-                </button>
-              )
-            }
-          })}
-        
-        </div>
+        <div className='col-span-full flex p-4 gap- space-x-4 place-content-center' > 
+          {item.links && Object.keys(item.links).map((linkKey, linkValue) => (
+            <Button key={item.id + linkKey} type={linkKey} link={linkValue}/>
+          ))}
+          </div>
       </div>
 
     </div>

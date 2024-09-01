@@ -1,34 +1,8 @@
 { 
     "portfolioitems": [
-        {
-            "id": "0", 
-            "title": "ZLab", 
-            "description": "Webapp for 3D-print on-demand service",
-            "body": "ZLab is a concept webapp designed for a 3D-print on-demand service. The USP of the application is it's automatic quote calculator that accurately determines the quantity of material required for a model.",
-            "tech": {
-                "Backend": [".Net 8"],
-                "Frontend": ["MVVM", "Razor Views", "Bootstrap", "Three.JS"],
-                "": ["Self-hosted", "SQLite", "ASP.NET Identity", "Email Sender with Brevo", "Localization", "Custom bash-scripts slice and parse g-code"]
-            }, 
-            "links": {
-                "try_demo": "https://zlab.no"
-            },
-            "media": [
-                ["price calculation page", "zlab_demo_1.jpg", "p"], 
-                ["", "zlab_demo_1.jpg", "p"], 
-                ["Logo", "pasty_logo_1.jpeg", "s"],
-                ["", "pasty_logo_1.jpeg", "s"],
-                ["Landscape image", "zlab_demo_2.jpg", "l"],
-                ["", "zlab_demo_2.jpg", "l"],
-                ["price calculation page", "zlab_demo_1.jpg"],
-                ["", "zlab_demo_1.jpg"],
-                ["Logo", "pasty_logo_1.jpeg"],
-                ["", "pasty_logo_1.jpeg"],
-                ["Landscape image", "zlab_demo_2.jpg"],
-                ["", "zlab_demo_2.jpg"]
-
-            ]
-        }, 
+        {   "id": "0",
+            "title": "Stilian Zagorov"
+    }, 
         {
             "id": "1", 
             "title": "ZLab", 
@@ -40,8 +14,13 @@
                 "": ["Self-hosted", "SQLite", "ASP.NET Identity", "Email Sender with Brevo", "Localization", "Custom bash-scripts slice and parse g-code"]
             }, 
             "links": {
-                "try_demo": "https://zlab.no"
+                "try_demo": "https://zlab.no",
+                "try_prod": "https://zlab.no",
+                "app_store": "https://zlab.no",
+                "read_more": "https://zlab.no",
+                "other": "https://zlab.no"
             },
+            "logo": "pasty_logo_1.jpeg",
             "media": [
                 ["price calculation page", "zlab_demo_1.jpg", "p"], 
                 ["", "zlab_demo_1.jpg", "p"], 
@@ -89,6 +68,35 @@
         }, 
         {
             "id": "3", 
+            "title": "ZLab", 
+            "description": "Webapp for 3D-print on-demand service",
+            "body": "ZLab is a concept webapp designed for a 3D-print on-demand service. The USP of the application is it's automatic quote calculator that accurately determines the quantity of material required for a model.",
+            "tech": {
+                "Backend": [".Net 8"],
+                "Frontend": ["MVVM", "Razor Views", "Bootstrap", "Three.JS"],
+                "": ["Self-hosted", "SQLite", "ASP.NET Identity", "Email Sender with Brevo", "Localization", "Custom bash-scripts slice and parse g-code"]
+            }, 
+            "links": {
+                "try_demo": "https://zlab.no"
+            },
+            "media": [
+                ["price calculation page", "zlab_demo_1.jpg", "p"], 
+                ["", "zlab_demo_1.jpg", "p"], 
+                ["Logo", "pasty_logo_1.jpeg", "s"],
+                ["", "pasty_logo_1.jpeg", "s"],
+                ["Landscape image", "zlab_demo_2.jpg", "l"],
+                ["", "zlab_demo_2.jpg", "l"],
+                ["price calculation page", "zlab_demo_1.jpg"],
+                ["", "zlab_demo_1.jpg"],
+                ["Logo", "pasty_logo_1.jpeg"],
+                ["", "pasty_logo_1.jpeg"],
+                ["Landscape image", "zlab_demo_2.jpg"],
+                ["", "zlab_demo_2.jpg"]
+
+            ]
+        }, 
+        {
+            "id": "4", 
             "title": "ZLab", 
             "description": "Webapp for 3D-print on-demand service",
             "body": "ZLab is a concept webapp designed for a 3D-print on-demand service. The USP of the application is it's automatic quote calculator that accurately determines the quantity of material required for a model.",

@@ -35,6 +35,15 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
   animation: spinBackground 1s linear;
 }
 
+.scrolldownAnimation{
+  animation: updown  ease-in-out 4s infinite;
+}
+
+@keyframes updown{
+  0% {transform: translateY(1em); color: #4db2be;}
+  50% {transform: translateY(-1em); color: #0a626c;}
+  100% {transform: translateY(1em); color: #4db2be;}
+}
 @keyframes spinBackground {
   0% {background: linear-gradient(160deg, var(--primary) 20%, var(--accent));}
   10% {background: linear-gradient(155deg, var(--primary) 22%, var(--accent));}

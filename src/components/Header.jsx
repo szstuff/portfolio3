@@ -11,7 +11,7 @@ const Header = () => {
 
     // Initialize targetRefs
     useEffect(() => {
-        targetRefs.current = targetRefs.current.slice(0, portfolioitems.length);
+        targetRefs.current = targetRefs.current.slice(0, portfolioitems.length+1);
     }, [portfolioitems.length]);
 
     // Scroll to specific element when currentCardId changes
@@ -21,11 +21,6 @@ const Header = () => {
                 const targetElement = targetRefs.current[currentCardId];
                 if (targetElement) {
                     console.log(`Scrolling to ${portfolioitems[currentCardId].id}`);
-                    targetRefs.current[0].className='behind'
-                    targetRefs.current[1].className='behind'
-                    targetRefs.current[2].className='behind'
-                    targetRefs.current[3].className='behind'
-                    targetElement.className='on-top'
                     scrollRef.current.scrollTo({
                         top: targetElement.offsetTop,
                         behavior: 'smooth'
@@ -46,14 +41,16 @@ const Header = () => {
         }
     };
   return (
-    <nav className='bg-red-400 border-b border-blue-300 h-[60px] text-2xl'>
-        <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
-            <div className='flex items-center justify-between'>
+    <nav className='bg-[color:var(--secondary)] h-[60px] content-center'>
+        <div className=' px-2 sm:px-6 lg:px-8'>
+            <div className='flex items-center justify-between text-[color:var(--primary)]'>
                 <div className='flex flex-1 items-center md:justify-start'>
-                    <p> stilian zagorov </p>
-                    <div ref={scrollRef} className='h-[30px] overflow-y-hidden px-4 pt-6'>
+                    <div ref={scrollRef} className='h-[60px] overflow-y-hidden px-4 pt-6 '>
                         {portfolioitems.map((item, index) => (
-                            <div key={item.id} ref={(el) => setRef(el, index)}><p className='h-[5vh] p-y-2 my-2'> {item.id} : {item.title} </p></div>
+                            <div key={item.id} ref={(el) => setRef(el, index)}
+                                className='content-center pt-2'
+                            >
+                                <h3 className='h-[5vh] p-y-2 my-2 text-4xl'> {item.title} </h3></div>
                         ))
                         }
                     </div>
