@@ -39,6 +39,15 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
   animation: updown  ease-in-out 4s infinite;
 }
 
+.animateload {
+  animation: slidein 0.5s ease;
+}
+
+@keyframes slidein {
+  0% {transform: translateX(-1em); opacity: 0.5;}
+  100% {transform: translateX(0); opacity: 1;}
+}
+
 @keyframes updown{
   0% {transform: translateY(1em); color: #4db2be;}
   50% {transform: translateY(-1em); color: #0a626c;}

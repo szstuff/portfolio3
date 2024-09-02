@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from "./Button";
+import { CardButton } from "./Button";
 
 
 // Tech object: 
@@ -30,7 +30,7 @@ const Card = React.forwardRef(({ item }, ref) => {
               <img src={`/src/assets/media/${item.logo}`} className=' w-auto max-h-[10vh] rounded-lg'/>
             </div>
           )}
-          <div className=' shrink-0 w-auto'> <h1 className='text-4xl font-bold'> {item.id + ':' + item.title} </h1> 
+          <div className=' shrink-0 w-auto'> <h1 className='text-4xl font-bold'> {item.title} </h1> 
           <h2 className='text-xl text-slate-500'> {item.description} </h2>  
           </div> 
         </div>
@@ -95,7 +95,7 @@ const Card = React.forwardRef(({ item }, ref) => {
                   <div key={index} className={`flex-none max-w-[80%] 
                   max-h-full snap-start`}>
                       {title && (
-                        <p className='text-center font-thin text-xl h-[5%] mb-[5%] w-fit'> {title + ":" + aspectRatio} </p>
+                        <p className='text-center font-thin text-xl h-[5%] mb-[5%] w-fit'> {title} </p>
                       )} 
                     <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} 
                       className={` 
@@ -114,9 +114,9 @@ const Card = React.forwardRef(({ item }, ref) => {
         </div>
 
         <div className='col-span-full flex p-4 gap- space-x-4 place-content-center' > 
-          {item.links && Object.keys(item.links).map((linkKey, linkValue) => (
-            <Button key={item.id + linkKey} type={linkKey} link={linkValue}/>
-          ))}
+          {item.links && Object.keys(item.links).map((linkKey, index) => (
+            <CardButton key={item.id + linkKey} type={linkKey} link={(linkKey == "read_more") ? item.id : item.links[linkKey]}/>
+             ))}
           </div>
       </div>
 

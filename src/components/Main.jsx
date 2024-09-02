@@ -2,10 +2,9 @@ import React, { useEffect, useRef, useState, useContext } from 'react';
 import Card from './Card';
 import { UserContext } from '../App';
 import { ScrollContext } from '../App';
-import {portfolioitems} from '../assets/portfolioitems.json'
 import LandingCard from './LandingCard';
 
-const Main = () => {
+const Main = ({portfolioitems}) => {
     const { currentCardId, setCurrentCardId } = useContext(UserContext);
     const elementsRef = useRef([]);  // Array of refs for each element
     const [elementsInView, setElementsInView] = useState([]); // Array of elements that are in viewport
