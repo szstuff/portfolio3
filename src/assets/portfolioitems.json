@@ -1,10 +1,14 @@
 { 
     "portfolioitems": [
-        {   "id": "0",
+        {   "id": "0", "type": "landingCard",
+            "name": "landingCard",
             "title": "Stilian Zagorov"
     }, 
+        {   "id": "1", "type": "filtersCard",
+            "name": "filtersCard"
+    }, 
         {
-            "id": "1", 
+            "id": "2", "type": "portfolioItemCard", 
             "title": "Test-card", 
             "released": "",
             "updated": "",
@@ -29,7 +33,7 @@
             ]
         },
         {
-            "id": "2", 
+            "id": "3", "type": "portfolioItemCard",
             "title": "ZLab", 
             "released": "",
             "updated": "",
@@ -50,7 +54,7 @@
 
             ]
         }, {
-            "id": "3", 
+            "id": "4", "type": "portfolioItemCard",
             "title": "Pasty Keyboard", 
             "description": "iOS keyboard app",
             "body": "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field.",
@@ -66,7 +70,7 @@
                 ["", "pasty_1.jpeg", "p"]
             ]
         }, {
-            "id": "4", 
+            "id": "5", "type": "portfolioItemCard",
             "title": "VR Trash Demo", 
             "description": "VR Demo for generic HMDs",
             "body": "VR demo designed for generic headsets powered by a smartphone. The application allows the user to look around a simulation of one of my prototypes collecting floating trash in the ocean. It runs on Unity using a custom camera rig controller that addresses the shortcomings of the headset used - including IPD adjustment in software and gyroscope-based tracking (as opposed to true spatial tracking).",
@@ -78,7 +82,7 @@
 
             ]
         }, {
-            "id": "5", 
+            "id": "6", "type": "portfolioItemCard",
             "title": "Diskusjonsforum", 
             "description": ".NET MVC Discussion forum",
             "body": "Diskusjonsforum is a modern and simple MVC discussion forum webapp using technologies like NET 6.0, EntityFrameworkCore, and AspNetCore Identity. The live demo is a version of the webapp hosted on Azure, modified by me to use session cookies instead of identity as to make the demo more accessible.",

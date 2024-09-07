@@ -3,6 +3,7 @@ import Card from './Card';
 import { UserContext } from '../App';
 import { ScrollContext } from '../App';
 import LandingCard from './LandingCard';
+import FilterOptions from './FilterOptions';
 
 const Main = ({portfolioitems}) => {
     const { currentCardId, setCurrentCardId } = useContext(UserContext);
@@ -62,28 +63,41 @@ const Main = ({portfolioitems}) => {
         }
         }, [setScrollY])
 
+        const renderCard = (item, index) => {
+            switch(item.type){
+                case "landingCard":
+                    return ( 
+                        <LandingCard 
+                            ref={(el) => elementsRef.current[index] = el} 
+                            key={index}
+                            index={index} 
+                            filters={filters}
+                            setFilters={setFilters}
+                        />
+                    )
+                case "filtersCard": 
+                    return (
+                        <FilterOptions filters={filters} setFilters={setFilters}/>
+                    )
+                default: 
+                    return (
+                        <Card 
+                            ref={(el) => elementsRef.current[index] = el}  
+                            key={item.id} 
+                            item={item}
+                            index={index}
+                        />           
+                    )
+            }
+        }
+
         return (
             <div ref={scrollRef} className='bg-[color:var(--secondary)] h-[calc(100vh-60px)] snap-y snap-mandatory scroll-p-4 overflow-y-scroll'>
                 <div className='container mb-28'>
                     <div className='relative'>
+
                         {portfolioitems.map((item, index) => (
-                            // id 0 is reserved for landing card 
-                            index == 0 ? (
-                            <LandingCard 
-                                ref={(el) => elementsRef.current[index] = el} 
-                                key={index}
-                                index={index} 
-                                filters={filters}
-                                setFilters={setFilters}
-                            />
-                            ) : (
-                            <Card 
-                                ref={(el) => elementsRef.current[index] = el}  
-                                key={item.id} 
-                                item={item}
-                                index={index}
-                            />
-                            )
+                            renderCard(item, index)    
                         ))}
                     </div>
                 </div>

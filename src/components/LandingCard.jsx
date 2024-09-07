@@ -3,7 +3,6 @@ import ScrollDownPrompt from './ScrollDownPrompt'
 import {Button} from './Button'
 import { FaDotCircle } from 'react-icons/fa'
 import { FiArrowDownCircle } from 'react-icons/fi'
-import FilterOptions from './FilterOptions'
 
 const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
   return (
@@ -38,7 +37,6 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
                 </div>
             </div>
              <ScrollDownPrompt/>
-             <FilterOptions filters={filters} setFilters={setFilters}/>
         </div>
     </div>
   )
