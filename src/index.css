@@ -24,9 +24,8 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
 
 /* Filter button */
 .filterButton{
-  padding: 15px 5px;
-  width: 80%;
-  margin: 0 10% 10% 5%;
+  padding: 10px 5px;
+  width: 100%;
   border: 2px solid var(--text);
   border-radius: 10px;
   color: var(--text);
@@ -36,6 +35,23 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
   background-color: var(--secondary);
   color: var(--primary);
   transition: all 0.5s;
+}
+
+/* "Swipe up" prompt icon */
+.scrolldownAnimation{
+  animation: updown  ease-in-out 4s infinite;
+}
+
+@keyframes updown{
+  0% {transform: translateY(0em); color: #2095a2;}
+  50% {transform: translateY(-0.5em); color: #0db9cf;}
+  100% {transform: translateY(0em); color: #2095a2;}
+}
+
+/* Portfolio Detail View */
+.animateload {
+   /* Slide in animation for title text in header component  */
+  animation: slidein 0.5s ease;
 }
 
 /* Portfolio item card */
@@ -51,24 +67,11 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
   animation: spinBackground 1s linear;
 }
 
-.scrolldownAnimation{
-  animation: updown  ease-in-out 4s infinite;
-}
-
-.animateload {
-  animation: slidein 0.5s ease;
-}
-
 @keyframes slidein {
   0% {transform: translateX(-1em); opacity: 0.5;}
   100% {transform: translateX(0); opacity: 1;}
 }
 
-@keyframes updown{
-  0% {transform: translateY(1em); color: #4db2be;}
-  50% {transform: translateY(-1em); color: #0a626c;}
-  100% {transform: translateY(1em); color: #4db2be;}
-}
 @keyframes spinBackground {
   0% {background: linear-gradient(160deg, var(--primary) 20%, var(--accent));}
   10% {background: linear-gradient(155deg, var(--primary) 22%, var(--accent));}

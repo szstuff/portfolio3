@@ -62,7 +62,10 @@ const Header = ({id}) => {
                             <div key={item.id} ref={(el) => setRef(el, index)}
                                 className='content-center pt-2'
                             >
-                                <h3 className='h-[5vh] p-y-1 my-1 text-2xl sm:text-3xl md:text-4xl'> {item.title} </h3></div>
+                                {item.title != "" && (
+                                <h3 className='h-[5vh] p-y-1 my-1 text-2xl sm:text-3xl md:text-4xl'> {item.title} </h3>
+                                )}
+                            </div>
                         ))
                         }
                     </div>

@@ -13,11 +13,11 @@ const FilterOptions = ({filters, setFilters}) => {
     
     return (
     <div className={`border-black border-2 rounded-lg
-        bg-slate-100 shadow-xl px-8 pb-4 pt-8 w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
-        mt-5 grid grid-cols-2 sm:grid-cols-4
+        bg-slate-100 shadow-xl px-8 pb-2 pt-2 w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
+        mt-5 grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-8 gap-4
         card
         `}>
-        <div className='col-span-2 mb-4 text-center'>
+        <div className='col-span-3 sm:col-span-2 mb-2 text-center xl:text-left'>
             <h3 className='text-4xl'> Filter projects </h3>
         </div>
         <div className='col-span-1'>

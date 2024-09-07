@@ -52,7 +52,7 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
       if (type == 'app_store') { 
               return (
                 <a href={link} target='_blank'>
-                  <div className={`bg-red-500 ${width == 'full' && 'w-[90%] mx-[10%]'}`}>
+                  <div className={`bg-red-500 ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                     <img src={appstoreIcon} className='w-full'/> 
                   </div>
                 </a>
@@ -60,7 +60,7 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
             } else if (type == 'try_demo') {
               return (
                 <a href={link} target='_blank'>
-                  <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[10%]'}`}>
+                  <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                     Try Development Build
                   </button>
               </a>
@@ -68,7 +68,7 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
             } else if (type == 'try_prod') {
               return (
                 <a href={link} target='_blank'>
-                <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shrink  ${width == 'full' && 'w-[90%] mx-[10%]'}`}>
+                <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shrink  ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                   Try
                 </button>
               </a>
@@ -76,7 +76,7 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
             } else if (type == 'read_more') {
               return (
                 <Link to={`/project/${link}`}>
-                  <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shrink  ${width == 'full' && 'w-[90%] mx-[10%]'}`}>
+                  <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shrink  ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                     Read More
                   </button>
                 </Link>
@@ -84,14 +84,14 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
             }
             else if (type == 'disabled') {
                 return (
-                  <button disabled className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-slate-500 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[10%]'}`}>
+                  <button disabled className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-slate-500 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                     {text}
                   </button>
                 )
             }            else {
               return (
                 <a href={link} target='_blank'>
-                <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[10%]'}`}>
+                <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                   {type}
                 </button>
               </a>

@@ -43,10 +43,13 @@ const Main = ({portfolioitems}) => {
     }, []);
 
     useEffect(() => {
-        setCurrentCardId(elementsInView[0])  
-        console.log("Elements currently in view:", elementsInView);
-        console.log("Elements in total:", elementsRef);
+        setCurrentCardId(elementsInView[0]) 
         }, [elementsInView]);
+
+
+    useEffect(() => {
+        console.log(filters)
+    }, [filters])
 
     //Header-main view scroll sync logic
     const {setScrollY} = useContext(ScrollContext)
@@ -63,7 +66,8 @@ const Main = ({portfolioitems}) => {
         }
         }, [setScrollY])
 
-        const renderCard = (item, index) => {
+
+        const renderCard = (item, index, filters) => {
             switch(item.type){
                 case "landingCard":
                     return ( 
@@ -80,27 +84,31 @@ const Main = ({portfolioitems}) => {
                         <FilterOptions filters={filters} setFilters={setFilters}/>
                     )
                 default: 
+                //If default, the item is a normal portfolio item 
+                //if no filters || item's filters include at least one (.some) of the chosen filters, render card 
+                    if (filters.length == 0 || item.applicableFilters.some(filterText => filters.includes(filterText))){
                     return (
                         <Card 
                             ref={(el) => elementsRef.current[index] = el}  
                             key={item.id} 
                             item={item}
                             index={index}
-                        />           
+                        /> 
                     )
+                } else {
+                    return null
+                }
             }
         }
 
         return (
-            <div ref={scrollRef} className='bg-[color:var(--secondary)] h-[calc(100vh-60px)] snap-y snap-mandatory scroll-p-4 overflow-y-scroll'>
-                <div className='container mb-28'>
-                    <div className='relative'>
-
+            <div ref={scrollRef} className='bg-[color:var(--secondary)] w-screen h-[calc(100vh-60px)] snap-y snap-mandatory scroll-p-4 overflow-y-scroll'>
+                <div className='container mb-28 max-w-max'>
                         {portfolioitems.map((item, index) => (
-                            renderCard(item, index)    
+                            renderCard(item, index, filters)    
                         ))}
-                    </div>
                 </div>
+                <p className='text-xl font-light text-slate-300 mx-[10%]'>Made using Portfolio3 template by stilian.dev</p>
             </div>
         );
 };

@@ -5,14 +5,14 @@
             "title": "Stilian Zagorov"
     }, 
         {   "id": "1", "type": "filtersCard",
-            "name": "filtersCard"
-    }, 
+            "name": "filtersCard",
+            "title": ""
+            }, 
         {
             "id": "2", "type": "portfolioItemCard", 
-            "title": "Test-card", 
-            "released": "",
-            "updated": "",
-            "contextorreason": "",
+            "title": "Test-card",
+            "applicableFilters": ["Design", "Software", "Favorites", "Published", ".NET", "React"], 
+            "date": "",
             "description": "Web app for 3D-print on-demand service",
             "body": "Test card with various elements to test programatic parsing and presentation of content. E.g. design section, several media items, etc. ",
             "tech": {
@@ -35,9 +35,8 @@
         {
             "id": "3", "type": "portfolioItemCard",
             "title": "ZLab", 
-            "released": "",
-            "updated": "",
-            "contextorreason": "",
+            "applicableFilters": ["Software", "Favorites", "Published", ".NET"], 
+            "date": "",
             "description": "Web app for 3D-print on-demand service",
             "body": "ZLab is a concept web app designed for a 3D-print on-demand service. The USP of the application is it's automatic quote calculator that accurately determines the quantity of material required for a model.",
             "tech": {
@@ -56,6 +55,8 @@
         }, {
             "id": "4", "type": "portfolioItemCard",
             "title": "Pasty Keyboard", 
+            "date": "",
+            "applicableFilters": ["Software", "Favorites", "Published"], 
             "description": "iOS keyboard app",
             "body": "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field.",
             "tech": {
@@ -72,6 +73,8 @@
         }, {
             "id": "5", "type": "portfolioItemCard",
             "title": "VR Trash Demo", 
+            "date": "",
+            "applicableFilters": ["Design", "Software"], 
             "description": "VR Demo for generic HMDs",
             "body": "VR demo designed for generic headsets powered by a smartphone. The application allows the user to look around a simulation of one of my prototypes collecting floating trash in the ocean. It runs on Unity using a custom camera rig controller that addresses the shortcomings of the headset used - including IPD adjustment in software and gyroscope-based tracking (as opposed to true spatial tracking).",
             "tech": {
@@ -84,6 +87,8 @@
         }, {
             "id": "6", "type": "portfolioItemCard",
             "title": "Diskusjonsforum", 
+            "date": "",
+            "applicableFilters": ["Software", "Favorites", "Published", ".NET"], 
             "description": ".NET MVC Discussion forum",
             "body": "Diskusjonsforum is a modern and simple MVC discussion forum webapp using technologies like NET 6.0, EntityFrameworkCore, and AspNetCore Identity. The live demo is a version of the webapp hosted on Azure, modified by me to use session cookies instead of identity as to make the demo more accessible.",
             "tech": {
