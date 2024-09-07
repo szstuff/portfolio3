@@ -8,6 +8,7 @@ const Main = ({portfolioitems}) => {
     const { currentCardId, setCurrentCardId } = useContext(UserContext);
     const elementsRef = useRef([]);  // Array of refs for each element
     const [elementsInView, setElementsInView] = useState([]); // Array of elements that are in viewport
+    const [filters, setFilters] = useState([]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -62,8 +63,8 @@ const Main = ({portfolioitems}) => {
         }, [setScrollY])
 
         return (
-            <div ref={scrollRef} className='bg-[color:var(--secondary)] h-[calc(100vh-60px)] snap-y snap-mandatory scroll-p-4 overflow-y-scroll relative'>
-                <div className='container'>
+            <div ref={scrollRef} className='bg-[color:var(--secondary)] h-[calc(100vh-60px)] snap-y snap-mandatory scroll-p-4 overflow-y-scroll'>
+                <div className='container mb-28'>
                     <div className='relative'>
                         {portfolioitems.map((item, index) => (
                             // id 0 is reserved for landing card 
@@ -72,6 +73,8 @@ const Main = ({portfolioitems}) => {
                                 ref={(el) => elementsRef.current[index] = el} 
                                 key={index}
                                 index={index} 
+                                filters={filters}
+                                setFilters={setFilters}
                             />
                             ) : (
                             <Card 

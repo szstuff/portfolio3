@@ -19,7 +19,7 @@ const Card = React.forwardRef(({ item }, ref) => {
       className={`snap-start shrink-0 border-black border-2 rounded-lg
       bg-slate-100 shadow-xl p-4 h-[85vh] w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
       flex flex-row justify-around
-      mt-5 order-1  
+      mt-5
       card
     `}>
 
@@ -50,18 +50,18 @@ const Card = React.forwardRef(({ item }, ref) => {
           </div>
         )}
 
-        <div className='col-span-full flex grow w-[100%] max-h-[70%]
+        <div className='col-span-full flex grow w-auto max-h-[70%]
         overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6
         ' > 
         {item.tech && Object.keys(item.tech).length > 0 && (
-            <div className='flex-none max-w-[80vw] lg:max-w-[70vw] max-h-full snap-start
+            <div className='flex-none w-[60vw] lg:w-[40vw] max-h-full snap-start
             border-y-4 border-slate-200 pl-2 overflow-y-scroll
             '>
               <h1 className='text-4xl font-semibold pt-4 pb-6'> Technologies</h1>
               <ul>
                 {Object.entries(item.tech).map(([techKey, techValues]) => (
                   <li key={techKey}>
-                    <h2 className='text-xl font-light w-[50%] border-t-2 border-slate-400 '>{techKey}</h2>
+                    <h2 className='text-xl font-light w-auto border-t-2 border-slate-400 '>{techKey}</h2>
                     <ul className='list-disc pl-4 mb-4'>
                       {techValues.map((techItem, index) => (
                         <li key={index} className='text-xl font-extralight'>{techItem}</li>
@@ -78,8 +78,8 @@ const Card = React.forwardRef(({ item }, ref) => {
                 if (extension === "mp4") {
                   return (
                     <div key={index} className={`flex-none w-fit
-                    {title ? "max-w-[70vw]" : "max-w-[80vw]"} 
-                    max-h-full snap-start`}>
+                    {title ? "h-[90%]" : "h-[100%]"} 
+                    w-[90vw] lg:w-[80vw] snap-start`}>
                       {title && (
                         <p className='text-center font-thin text-xl h-[5%]'> {title} </p>
                       )}
@@ -98,7 +98,7 @@ const Card = React.forwardRef(({ item }, ref) => {
                         <p className='text-center font-thin text-xl h-[5%] mb-[5%] w-fit'> {title} </p>
                       )} 
                     <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} 
-                      className={` 
+                      className={` inline-block
                         //Set dimensions based on aspect ratio and title (to accomodate title height) 
                         
                       ${aspectRatio == "p" && (title ? 'h-[92%] w-auto' : 'h-[100%]')} // portrait

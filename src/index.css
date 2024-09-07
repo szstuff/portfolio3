@@ -22,7 +22,23 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
   --text: #19747E;
 }
 
+/* Filter button */
+.filterButton{
+  padding: 15px 5px;
+  width: 80%;
+  margin: 0 10% 10% 5%;
+  border: 2px solid var(--text);
+  border-radius: 10px;
+  color: var(--text);
+}
 
+.filterButtonToggled{
+  background-color: var(--secondary);
+  color: var(--primary);
+  transition: all 0.5s;
+}
+
+/* Portfolio item card */
 .card {
   background: linear-gradient(160deg, var(--primary) 20%, var(--accent));
   box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for default card */

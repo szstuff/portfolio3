@@ -3,12 +3,13 @@ import ScrollDownPrompt from './ScrollDownPrompt'
 import {Button} from './Button'
 import { FaDotCircle } from 'react-icons/fa'
 import { FiArrowDownCircle } from 'react-icons/fi'
+import FilterOptions from './FilterOptions'
 
-const LandingCard = React.forwardRef(({item}, ref) => {
+const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
   return (
     <div ref={ref} id={"0"}
       className={`snap-start  
-      p-4 h-auto max-h-[90vh] w-[100vw]
+      p-4 h-auto max-h-[90vh] w-full
       justify-around
     `}>
         <div className='flex flex-col gap-2 min-w-full'> 
@@ -37,6 +38,7 @@ const LandingCard = React.forwardRef(({item}, ref) => {
                 </div>
             </div>
              <ScrollDownPrompt/>
+             <FilterOptions filters={filters} setFilters={setFilters}/>
         </div>
     </div>
   )

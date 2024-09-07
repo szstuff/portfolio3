@@ -5,6 +5,31 @@
     }, 
         {
             "id": "1", 
+            "title": "Test-card", 
+            "released": "",
+            "updated": "",
+            "contextorreason": "",
+            "description": "Web app for 3D-print on-demand service",
+            "body": "Test card with various elements to test programatic parsing and presentation of content. E.g. design section, several media items, etc. ",
+            "tech": {
+                "Backend": [".Net 8"],
+                "Frontend": ["Razor Views", "Bootstrap", "Three.JS"],
+                "": ["MVVM", "Self-hosted", "SQLite", "ASP.NET Identity", "Email Sender with Brevo", "Localization", "Custom bash-scripts slice and parse g-code"]
+            }, 
+            "links": {
+                "try_demo": "https://zlab.no/",
+                "read_more": ""
+            },
+            "logo": "pasty_logo_1.jpeg",
+            "media": [
+                ["price calculation page", "zlab_demo_1.jpg", "p"],
+                ["", "zlab_demo_1.jpg", "p"],
+                ["price calculation page 3", "zlab_demo_1.jpg", "p"],
+                ["price calculation page 4", "zlab_demo_1.jpg", "p"]
+            ]
+        },
+        {
+            "id": "2", 
             "title": "ZLab", 
             "released": "",
             "updated": "",
@@ -20,13 +45,12 @@
                 "try_demo": "https://zlab.no/",
                 "read_more": ""
             },
-            "logo": "pasty_logo_1.jpeg",
             "media": [
                 ["price calculation page", "zlab_demo_1.jpg", "p"]
 
             ]
         }, {
-            "id": "2", 
+            "id": "3", 
             "title": "Pasty Keyboard", 
             "description": "iOS keyboard app",
             "body": "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field.",
@@ -42,7 +66,7 @@
                 ["", "pasty_1.jpeg", "p"]
             ]
         }, {
-            "id": "3", 
+            "id": "4", 
             "title": "VR Trash Demo", 
             "description": "VR Demo for generic HMDs",
             "body": "VR demo designed for generic headsets powered by a smartphone. The application allows the user to look around a simulation of one of my prototypes collecting floating trash in the ocean. It runs on Unity using a custom camera rig controller that addresses the shortcomings of the headset used - including IPD adjustment in software and gyroscope-based tracking (as opposed to true spatial tracking).",
@@ -54,7 +78,7 @@
 
             ]
         }, {
-            "id": "4", 
+            "id": "5", 
             "title": "Diskusjonsforum", 
             "description": ".NET MVC Discussion forum",
             "body": "Diskusjonsforum is a modern and simple MVC discussion forum webapp using technologies like NET 6.0, EntityFrameworkCore, and AspNetCore Identity. The live demo is a version of the webapp hosted on Azure, modified by me to use session cookies instead of identity as to make the demo more accessible.",

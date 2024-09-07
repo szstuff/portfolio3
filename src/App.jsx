@@ -18,7 +18,7 @@ function App() {
     <ScrollContext.Provider value={{scrollY, setScrollY}}>
       <UserContext.Provider value={{currentCardId: currentCardId, setCurrentCardId: setCurrentCardId}}>
         <Router>
-          <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+          <meta name='viewport' content='width=device-width, initial-scale=1 '/>
           <Routes>
             <Route path="/" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
             <Route path="/project/:id" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
