@@ -10,10 +10,14 @@ html{
 Gradients:
 https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=search&utm_campaign=SS-GoogleSearch-Nonbrand-DynamicSearchAds-Tier3&utm_term=dsa-1480385100845___697641339341__&gad_source=1&gclid=EAIaIQobChMIsI6cyrSaiAMVfAuiAx3zFxYCEAAYASAAEgJzIvD_BwE
 3: Hex codes: soft mint green #D1E8E2, deep teal #19747E, light sky blue #A9D6E5, light gray #E2E2E2
-
-
 */
 
+/* Only show images when display is over 500px wide x 750px tall OR over 1000px tall */
+@media (max-height: 750px), (max-height:1000px) and (max-width: 500px){
+  .horizontalscrollcontainer {
+    display: none;
+  }
+}
 :root {
   --primary: #D1E8E2;
   --secondary: #19747E;

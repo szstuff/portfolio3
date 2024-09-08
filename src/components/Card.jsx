@@ -50,11 +50,12 @@ const Card = React.forwardRef(({ item }, ref) => {
           </div>
         )}
 
-        <div className='col-span-full flex grow w-auto max-h-[70%]
+        <div className='col-span-full flex grow w-auto h-[70vh]
         overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6
+        horizontalscrollcontainer
         ' > 
         {item.tech && Object.keys(item.tech).length > 0 && (
-            <div className='flex-none w-[60vw] lg:w-[40vw] max-h-full snap-start
+            <div className='flex-none w-fit max-h-full snap-start
             border-y-4 border-slate-200 pl-2 overflow-y-scroll
             '>
               <h1 className='text-4xl font-semibold pt-4 pb-6'> Technologies</h1>

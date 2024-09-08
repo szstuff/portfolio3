@@ -18,10 +18,10 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
             <div className='card grid grid-cols-2 rounded-lg gap-4 px-6 py-4'>
               <div className='col-span-2 flex justify-between items-center'>
                   <h3 className='font-semibold text-2xl'>{portfolioitems[2].title}</h3>
-                  <Button link={portfolioitems[2].links.try_demo} text={"Try Demo"}> Try </Button>
+                  <Button link={portfolioitems[2].links.try_demo} text={"Try Demo"} type={"try_demo"}> Try </Button>
               </div>
               <div className='col-span-2 flex flex-row gap-4'>
-                  <p className='flex-grow text-left'>{portfolioitems[2].description}</p>
+                  <p className='flex-grow shrink text-left'>{portfolioitems[2].description}</p>
                   <Button type="read_more" link={portfolioitems[2].id}/>
               </div>
             </div>
@@ -39,9 +39,7 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
 
           </div>
 
-          <div className='col-span-1 md:col-span-2 order-2 lg:mx-8 xl:mx-12'>
-            <p className='pt-8 text-[color:var(--primary)]'> This website is still under development. See my old portfolio for all my projects. </p>
-            <Button link={"https://www.stilian.dev"} type={"Full Portfolio"} width={"full"} text={"Full Portfolio"} mt={"4"}/>
+          <div className='col-span-1 md:col-span-2 order-2 lg:mx-8 xl:mx-12 grow content-center'>
             <div className='grid grid-cols-2 mx-[2.5%]'>
               <Button link={"https://github.com/szstuff/"} width={"full"} text={"GitHub"} mt={"4"}/>
               <Button link={"https://www.linkedin.com/in/stilianz/"} width={"full"} text={"LinkedIn"} mt={"4"}/>
