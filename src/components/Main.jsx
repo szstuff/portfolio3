@@ -108,7 +108,7 @@ const Main = ({portfolioitems}) => {
                             renderCard(item, index, filters)    
                         ))}
                 </div>
-                <p className='text-xl font-light text-slate-300 mx-[10%]'>Made using Portfolio3 template by stilian.dev</p>
+                <p className='text-xl font-light text-slate-300 mx-[10%]'>Made by stilian.dev with ❤️</p>
             </div>
         );
 };

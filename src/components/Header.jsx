@@ -40,12 +40,12 @@ const Header = ({id}) => {
         }
     };
   return (
-    <nav className='bg-[color:var(--secondary)] h-[60px] content-center'>
+    <nav className='bg-[color:var(--secondary)] h-[60px] content-center overflow-hidden'>
         <div className=' px-2 sm:px-6 lg:px-8'>
             <div className='flex items-center justify-between text-[color:var(--primary)]'>
                 <div className='flex flex-1 items-center md:justify-start'>
 
-                    {/* If user is not at landing page/root: load appropriate header title */}
+                    {/* If user is not at landing page/root: load appropriate title and back button */}
                     {id && (
                         <div className='flex animateload'>
                             <Link to={"/"}><FaArrowLeft className='ml-2 mr-4 h-[60px] size-6'/></Link>
@@ -54,8 +54,8 @@ const Header = ({id}) => {
                     )}
                     
                     {/* If user is not at landing page/root: hide scroll div 
-                        using css hide instead of conditional rendering because 
-                        the latter breaks the scroll effect when navigating to root from a path
+                        using css hide instead of conditional rendering (because 
+                        the latter breaks the scroll effect when navigating back to root from a path)
                     */}
                     <div ref={scrollRef} className={`h-[60px] overflow-y-hidden px-4 pt-6 shrink-0 ${id && 'hidden'}`} >
                         {portfolioitems.map((item, index) => (
@@ -70,11 +70,22 @@ const Header = ({id}) => {
                         }
                     </div>
                 </div>
-                    <p className='px-3 sm:text-lg md:text-xl'> github</p>
-                    <p className='px-3 sm:text-lg md:text-xl'> linkedin</p>
-                    <p className='px-3 sm:text-lg md:text-xl'> contact</p>
-                </div>
+                <Link to={"https://github.com/szstuff"} target='_blank'>
+                    <p className={`px-4 py-1 mx-4 md:px-8 sm:text-lg md:text-xl  border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700
+                        transition-all duration-500 transform
+                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-32 '}`}> 
+                        github 
+                    </p>
+                </Link>
+                <Link to={"https://www.linkedin.com/in/stilianz/"} target='_blank'>
+                    <p className={`px-4 py-1 mx-4 md:px-8 sm:text-lg md:text-xl  border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700
+                        transition-all duration-500 transform
+                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-20'}`}>
+                        linkedin
+                    </p>                
+                </Link>
             </div>
+        </div>
     </nav>
   )
 }
