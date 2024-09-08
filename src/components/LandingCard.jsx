@@ -1,6 +1,7 @@
 import React from 'react'
 import ScrollDownPrompt from './ScrollDownPrompt'
 import {Button} from './Button'
+import {portfolioitems} from '../assets/portfolioitems.json'
 
 const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
   return (
@@ -11,12 +12,34 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
       px-2 md:px-8 lg:px-16
       grid grid-cols-1 md:grid-cols-5 place-content-center gap-4 text-center
     `}>
-          <div className='col-span-1 md:col-span-3 text-xl order-1 lg:px-2'>
-              <p className='text-[color:var(--primary)]'> Hi! This is an early version of my redesigned portfolio website - created with React, Vite and Tailwind! 
-                  <br/> <br/>
-                  A lot of my information is missing as I'm still experimenting with different designs and ways of structuring and presenting the data. I am hosting this early development build to show my progress.</p>
+      {/* Left col: highlighted projects  */}
+         <div className='col-span-1 md:col-span-3 text-xl order-1 lg:px-2 space-y-4 lg:mx-8 xl:mx-12 self-center'>
+            <h3 className='text-4xl text-slate-300'> Latest </h3>
+            <div className='card grid grid-cols-2 rounded-lg gap-4 px-6 py-4'>
+              <div className='col-span-2 flex justify-between items-center'>
+                  <h3 className='font-semibold text-2xl'>{portfolioitems[2].title}</h3>
+                  <Button link={portfolioitems[2].links.try_demo} text={"Try Demo"}> Try </Button>
+              </div>
+              <div className='col-span-2 flex flex-row gap-4'>
+                  <p className='flex-grow text-left'>{portfolioitems[2].description}</p>
+                  <Button type="read_more" link={portfolioitems[2].id}/>
+              </div>
+            </div>
+
+            {/* <div className='card grid grid-cols-2 rounded-lg gap-4 px-6 py-4'>
+              <div className='col-span-2 flex justify-between items-center'>
+                  <h3 className='font-semibold text-2xl'>{portfolioitems[3].title}</h3>
+                  <Button link={portfolioitems[3].links.try_demo} text={"Try Demo"}> Try </Button>
+              </div>
+              <div className='col-span-2 flex flex-row gap-4'>
+                  <p className='flex-grow text-left'>{portfolioitems[3].description}</p>
+                  <Button type="read_more" link={portfolioitems[3].id}/>
+              </div>
+            </div> */}
+
           </div>
-          <div className='col-span-1 md:col-span-2 order-2 '>
+
+          <div className='col-span-1 md:col-span-2 order-2 lg:mx-8 xl:mx-12'>
             <p className='pt-8 text-[color:var(--primary)]'> This website is still under development. See my old portfolio for all my projects. </p>
             <Button link={"https://www.stilian.dev"} type={"Full Portfolio"} width={"full"} text={"Full Portfolio"} mt={"4"}/>
             <div className='grid grid-cols-2 mx-[2.5%]'>
