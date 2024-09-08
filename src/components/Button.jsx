@@ -81,18 +81,27 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
                   </button>
                 </Link>
               )
-            }
+            } 
             else if (type == 'disabled') {
                 return (
                   <button disabled className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-slate-500 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                     {text}
                   </button>
                 )
+            }
+            else if (type == 'secondary') {
+                return (
+                  <a href={link} target='_blank'>
+                  <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} border-blue-600 border-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
+                    {text}
+                  </button>
+                  </a>
+                )
             }            else {
               return (
                 <a href={link} target='_blank'>
                 <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
-                  {type}
+                  {text}
                 </button>
               </a>
               )

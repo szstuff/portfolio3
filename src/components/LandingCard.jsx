@@ -17,9 +17,13 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
                   A lot of my information is missing as I'm still experimenting with different designs and ways of structuring and presenting the data. I am hosting this early development build to show my progress.</p>
           </div>
           <div className='col-span-1 md:col-span-2 order-2 '>
-
-              <p className='pt-8 text-[color:var(--primary)]'> This website is still under development. See my old portfolio for all my projects. </p>
-              <Button link={"www.stilian.dev"} type={"Full Portfolio"} width={"full"} text={"Full Portfolio"} mt={"4"}/>
+            <p className='pt-8 text-[color:var(--primary)]'> This website is still under development. See my old portfolio for all my projects. </p>
+            <Button link={"https://www.stilian.dev"} type={"Full Portfolio"} width={"full"} text={"Full Portfolio"} mt={"4"}/>
+            <div className='grid grid-cols-2 mx-[2.5%]'>
+              <Button link={"https://github.com/szstuff/"} width={"full"} text={"GitHub"} mt={"4"}/>
+              <Button link={"https://www.linkedin.com/in/stilianz/"} width={"full"} text={"LinkedIn"} mt={"4"}/>
+            </div>
+            <Button link={"https://github.com/szstuff/portfolio3/"} type={"secondary"} width={"full"} text={"Fork this website!"} mt={"4"}/>
           </div>
              <ScrollDownPrompt/>
     </div>

@@ -70,17 +70,17 @@ const Header = ({id}) => {
                         }
                     </div>
                 </div>
-                <Link to={"https://github.com/szstuff"} target='_blank'>
-                    <p className={`px-4 py-1 mx-4 md:px-8 sm:text-lg md:text-xl  border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700
-                        transition-all duration-500 transform
-                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-32 '}`}> 
+                <Link to={"https://github.com/szstuff/"} target='_blank' 
+                    className={`transition-all duration-500 transform
+                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-32 '}`}>
+                    <p className= "px-4 py-1 mx-4 md:px-8 sm:text-lg md:text-xl border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700"> 
                         github 
                     </p>
                 </Link>
-                <Link to={"https://www.linkedin.com/in/stilianz/"} target='_blank'>
-                    <p className={`px-4 py-1 mx-4 md:px-8 sm:text-lg md:text-xl  border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700
-                        transition-all duration-500 transform
-                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-20'}`}>
+                <Link to={"https://www.linkedin.com/in/stilianz/"} target='_blank' 
+                    className={`transition-all duration-500 transform
+                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-32 '}`}>
+                    <p className="px-4 py-1 mx-4 md:px-8 sm:text-lg md:text-xl  border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700">
                         linkedin
                     </p>                
                 </Link>
