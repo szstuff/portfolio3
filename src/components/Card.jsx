@@ -16,8 +16,8 @@ import { CardButton } from "./Button";
 const Card = React.forwardRef(({ item }, ref) => {
   return (
     <div ref={ref} id={item.id}
-      className={`snap-start shrink-0 border-black border-2 rounded-lg
-      bg-slate-100 shadow-xl p-4 h-[85vh] w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
+      className={`snap-start shrink border-black border-2 rounded-lg
+      bg-slate-100 shadow-xl p-4 max-h-[85vh] w-[96vw] mx-[2vw] md:w-[84vw] md:mx-[8vw] lg:w-[80vw] lg:mx-[10vw]
       flex flex-row justify-around
       mt-5
       card
@@ -30,8 +30,10 @@ const Card = React.forwardRef(({ item }, ref) => {
               <img src={`/src/assets/media/${item.logo}`} className=' w-auto max-h-[10vh] rounded-lg'/>
             </div>
           )}
-          <div className=' shrink-0 w-auto'> <h1 className='text-4xl font-bold'> {item.title} </h1> 
-          <h2 className='text-xl text-slate-500'> {item.description} </h2>  
+          <div className=' shrink-0 w-auto'> 
+            <h2 className='text-sm text-slate-500'> {item.date} </h2>  
+            <h1 className='text-4xl font-bold'> {item.title} </h1> 
+            <h2 className='text-xl text-slate-500'> {item.description} </h2>  
           </div> 
         </div>
         <div className='col-span-full  p-4 text-xl lg:max-w-[70%] xl:max-w[60%] flex-grow' > <p> {item.body} </p> </div>
@@ -50,7 +52,7 @@ const Card = React.forwardRef(({ item }, ref) => {
           </div>
         )}
 
-        <div className='col-span-full flex grow w-auto h-[70vh]
+        <div className='col-span-full flex grow w-auto  max-h-[70vh]
         overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6
         horizontalscrollcontainer
         ' > 
@@ -85,7 +87,9 @@ const Card = React.forwardRef(({ item }, ref) => {
                         <p className='text-center font-thin text-xl h-[5%]'> {title} </p>
                       )}
                       <video controls 
-                        className={`${title ? 'h-[95%]' : 'h-full'} w-full object-contain`}>
+                        className={`${title ? 'h-[90%] mt-[1%]' : 'h-full'} w-full object-contain
+                        border-2 border-slate-500 rounded-lg
+                        `}>
                         <source src={`/src/assets/media/${media}`} type='video/mp4' />
                         Your browser does not support this video format.
                       </video>
