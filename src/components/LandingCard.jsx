@@ -21,9 +21,7 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
               <p className='pt-8 text-[color:var(--primary)]'> This website is still under development. See my old portfolio for all my projects. </p>
               <Button link={"www.stilian.dev"} type={"Full Portfolio"} width={"full"} text={"Full Portfolio"} mt={"4"}/>
           </div>
-            <div className='col-span-full order-last justify-self-center'>
              <ScrollDownPrompt/>
-            </div>
     </div>
   )
 })
