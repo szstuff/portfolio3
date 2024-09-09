@@ -85,6 +85,9 @@
             "tech": {
                 "": ["Unity3D", "Custom camera rig controller", "Shapr3D"]
             }, 
+            "links": {
+                "read_more": ""
+            },
             "media": [
                 ["demo", "vr_trash_demo_1.mp4", "l"] 
 
