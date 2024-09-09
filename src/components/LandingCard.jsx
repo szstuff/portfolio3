@@ -7,10 +7,9 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
   return (
     <div ref={ref} id={"0"}
       className={`snap-start  
-      p-4 h-auto max-h-[70vh] w-full
-      justify-around
+      p-4 h-auto max-h-[70vh]
       px-2 md:px-20 lg:px-26
-      grid grid-cols-1 md:grid-cols-5 place-content-center gap-4 text-center
+      grid grid-cols-1 md:grid-cols-5 gap-4
     `}>
       {/* Left col: highlighted projects  */}
          <div className='col-span-1 md:col-span-3 text-xl order-1 space-y-4 self-center'>
