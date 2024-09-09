@@ -30,7 +30,7 @@ const Card = React.forwardRef(({ item }, ref) => {
               <img src={`/src/assets/media/${item.logo}`} className=' w-auto max-h-[10vh] rounded-lg'/>
             </div>
           )}
-          <div className=' shrink-0 w-full'> 
+          <div className=' shrink-0 w-auto'> 
             <h2 className='text-sm text-slate-500'> {item.date} </h2>  
             <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold text-balance'> {item.title} </h1> 
             <h2 className='text-xl text-slate-500 text-balance'> {item.description} </h2>  
