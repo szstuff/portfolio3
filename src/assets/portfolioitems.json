@@ -107,7 +107,7 @@
                 "read_more": ""
             },
             "media": [
-                ["", "diskusjonsforum.png", "p"]
+                ["", "diskusjonsforum.png", "l"]
             
             ]
         }, {
@@ -115,7 +115,6 @@
             "title": "file transfer utility", 
             "date": "2023",
             "applicableFilters": ["Software", "Published"], 
-            "description": "file transfer utility with custom error handling",
             "body": "A CLI file transfer utility with custom implementations of the Stop-And-Wait, Selective Repeat and GBN protocols the utility can create artificial network issues such as lost or duplicate packets to test the error-handling components. Created as part of a Computer Networks and Cloud Services university course.",
             "tech": {
                 "": ["Python"]
@@ -133,7 +132,6 @@
             "title": "network throughput utility", 
             "date": "2023",
             "applicableFilters": ["Software", "Published"], 
-            "description": "network throughput utility inspired by iPerf",
             "body": "A CLI network throughput measurement utility inspired by iPerf. The utility tests the max throughput through a link between two hosts and shows statistics during and after the test. Created as part of a Computer Networks and Cloud Services university course.",
             "tech": {
                 "": ["Python"]
@@ -151,7 +149,7 @@
             "title": "Lateral lock mechanism", 
             "date": "2021",
             "applicableFilters": ["Design"], 
-            "description": "Lateral slide-in latch with lock",
+            "description": "Slide-in latch with lock",
             "body": "One of several mechanisms designed for a consumer hardware project that is under development. The lock uses magnets to provide tactile feedback when locking and can easily be manipulated with a coin.",
             "designed_in": ["Shapr3D"]
             , 

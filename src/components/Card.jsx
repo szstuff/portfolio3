@@ -30,10 +30,10 @@ const Card = React.forwardRef(({ item }, ref) => {
               <img src={`/src/assets/media/${item.logo}`} className=' w-auto max-h-[10vh] rounded-lg'/>
             </div>
           )}
-          <div className=' shrink-0 w-auto'> 
+          <div className=' shrink-0 w-full'> 
             <h2 className='text-sm text-slate-500'> {item.date} </h2>  
-            <h1 className='text-4xl font-bold'> {item.title} </h1> 
-            <h2 className='text-xl text-slate-500'> {item.description} </h2>  
+            <h1 className='text-4xl font-bold text-balance'> {item.title} </h1> 
+            <h2 className='text-xl text-slate-500 text-balance'> {item.description} </h2>  
           </div> 
         </div>
         <div className='col-span-full  p-4 text-xl lg:max-w-[70%] xl:max-w[60%] flex-grow' > <p> {item.body} </p> </div>

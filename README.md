@@ -12,6 +12,15 @@ The name "Portfolio3" simply reflects this project being my third portfolio iter
 - [ ] Refactor and optimize sloppy parts of the code 
 - [ ] Make proper documentation to facilitate reuse of the project 
 
+## Setup
+Assuming node and npm are already installed, you can clone the repo and set up the project using:
+
+1. `git clone https://github.com/szstuff/portfolio3`
+2. `cd portfolio3` 
+3. install dependencies with `node install` 
+4. run dev build with `node run dev`
+
+
 ## portfolioitems.json structure
 All items should have an id, type and title. 
 

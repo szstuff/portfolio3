@@ -104,12 +104,12 @@ const Main = ({portfolioitems}) => {
 
         return (
             <div ref={scrollRef} className='bg-[color:var(--secondary)] w-screen h-[calc(100vh-60px)] snap-y snap-mandatory scroll-p-4 overflow-y-scroll'>
-                <div className='container mb-28 max-w-max'>
+                <div className='container mb-28 max-w-max h-[svh-60]'>
                         {portfolioitems.map((item, index) => (
                             renderCard(item, index, filters)    
                         ))}
                 </div>
-                <p className='text-xl font-light text-slate-300 mx-[10%]'>Made by stilian.dev with ❤️</p>
+                <p className='text-xl font-light text-slate-300 mx-[10%]'>Made by stilian.dev with ❤️. <a target='_blank' href='https://github.com/szstuff/portfolio3' className='text-blue-300 underline'> Fork this website. </a></p>
             </div>
         );
 };

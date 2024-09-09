@@ -9,20 +9,20 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
       className={`snap-start  
       p-4 h-auto max-h-[70vh] w-full
       justify-around
-      px-2 md:px-8 lg:px-16
+      px-2 md:px-16 lg:px-20
       grid grid-cols-1 md:grid-cols-5 place-content-center gap-4 text-center
     `}>
       {/* Left col: highlighted projects  */}
          <div className='col-span-1 md:col-span-3 text-xl order-1 lg:px-2 space-y-4 lg:mx-8 xl:mx-12 self-center'>
-            <h3 className='text-4xl text-slate-300'> Latest </h3>
+            <h3 className='text-xl md:text-2xl lg:text-3xl text-slate-300 text-left'> What I'm working on now </h3>
             <div className='card grid grid-cols-2 rounded-lg gap-4 px-6 py-4'>
-              <div className='col-span-2 flex justify-between items-center'>
+              <div className='col-span-2 flex justify-between items-center text-sm'>
                   <h3 className='font-semibold text-2xl'>{portfolioitems[2].title}</h3>
                   <Button link={portfolioitems[2].links.try_demo} text={"Try Demo"} type={"try_demo"}> Try </Button>
               </div>
-              <div className='col-span-2 flex flex-row gap-4'>
+              <div className='col-span-2 flex flex-row gap-4 text-sm'>
                   <p className='flex-grow shrink text-left'>{portfolioitems[2].description}</p>
-                  <Button type="read_more" link={portfolioitems[2].id}/>
+                  <Button type="read_more" link={portfolioitems[2].id} />
               </div>
             </div>
 
