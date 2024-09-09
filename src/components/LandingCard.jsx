@@ -16,12 +16,12 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
             <h3 className='text-xl md:text-2xl lg:text-3xl text-slate-300 text-left'> What I'm working on now </h3>
             <div className='card grid grid-cols-2 rounded-lg gap-4 px-8 py-4'>
               <div className='col-span-2 flex justify-between items-center text-sm'>
-                  <h3 className='font-semibold text-2xl'>{portfolioitems[2].title}</h3>
-                  <Button link={portfolioitems[2].links.try_demo} text={"Try Demo"} type={"try_demo"}> Try </Button>
+                  <h3 className='font-semibold text-2xl'>{portfolioitems[3].title}</h3>
+                  <Button link={portfolioitems[3].links.try_demo} text={"Try Demo"} type={"try_demo"}> Try </Button>
               </div>
               <div className='col-span-2 flex flex-row gap-4 text-sm'>
-                  <p className='flex-grow shrink text-left'>{portfolioitems[2].description}</p>
-                  <Button type="read_more" link={portfolioitems[2].id} />
+                  <p className='flex-grow shrink text-left'>{portfolioitems[3].description}</p>
+                  <Button type="read_more" link={portfolioitems[3].id} />
               </div>
             </div>
 
