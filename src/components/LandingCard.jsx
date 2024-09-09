@@ -15,7 +15,7 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
       {/* Left col: highlighted projects  */}
          <div className='col-span-1 md:col-span-3 text-xl order-1 lg:px-2 space-y-4 lg:mx-8 xl:mx-12 self-center'>
             <h3 className='text-xl md:text-2xl lg:text-3xl text-slate-300 text-left'> What I'm working on now </h3>
-            <div className='card grid grid-cols-2 rounded-lg gap-4 px-6 py-4'>
+            <div className='card grid grid-cols-2 rounded-lg gap-4 px-8 py-4'>
               <div className='col-span-2 flex justify-between items-center text-sm'>
                   <h3 className='font-semibold text-2xl'>{portfolioitems[2].title}</h3>
                   <Button link={portfolioitems[2].links.try_demo} text={"Try Demo"} type={"try_demo"}> Try </Button>
