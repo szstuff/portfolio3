@@ -9,11 +9,11 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
       className={`snap-start  
       p-4 h-auto max-h-[70vh] w-full
       justify-around
-      px-2 md:px-16 lg:px-20
+      px-2 md:px-20 lg:px-26
       grid grid-cols-1 md:grid-cols-5 place-content-center gap-4 text-center
     `}>
       {/* Left col: highlighted projects  */}
-         <div className='col-span-1 md:col-span-3 text-xl order-1 lg:px-2 space-y-4 mx-2 lg:mx-8 xl:mx-12 self-center'>
+         <div className='col-span-1 md:col-span-3 text-xl order-1 space-y-4 self-center'>
             <h3 className='text-xl md:text-2xl lg:text-3xl text-slate-300 text-left'> What I'm working on now </h3>
             <div className='card grid grid-cols-2 rounded-lg gap-4 px-8 py-4'>
               <div className='col-span-2 flex justify-between items-center text-sm'>
