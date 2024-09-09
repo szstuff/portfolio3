@@ -11,3 +11,47 @@ The name "Portfolio3" simply reflects this project being my third portfolio iter
 - [ ] Set colors using config parameters
 - [ ] Refactor and optimize sloppy parts of the code 
 - [ ] Make proper documentation to facilitate reuse of the project 
+
+## portfolioitems.json structure
+All items should have an id, type and title. 
+
+type: landingCard and filtersCard specify that the Landing/filters card should be created. other values are treated like a normal portfolio item card. 
+title: prominent text in card and text displayed in header when item is in focus
+applicableFilters: array of strings representing under which filters the card should be displayed
+date: small text above title 
+description: short text under title
+body: long text, intended to be used as a full description
+tech: dictionary with key-value pairs where keys are a subtitle and values are string arrays. Items are displayed as bullet points. 
+links: dictionary with key-value pairs where keys denote the type of link (for styling) and values hold the link. Keys that don't use reserved names will instead have the key used as the button text. "read_more" is a special key and should have a blank string value if redirecting to the default template DetailCard component.  
+media: array of arrays. Inner array must contain three strings (media description to show over the media, path to media, orientation). Description can be blank string. Orientation should be set to "l" for landscape, "s" for square or "p" for portrait. Undefined orientation might cause images to stretch or crop unexpectedly. 
+
+{ 
+    "portfolioitems": [
+        {   "id": "0", "type": "landingCard",
+            "name": "landingCard",
+            "title": "Stilian Zagorov"
+    }, 
+        {   "id": "1", "type": "filtersCard",
+            "name": "filtersCard",
+            "title": ""
+            }, 
+        {
+            "id": "2", "type": "portfolioItemCard", 
+            "title": "Portfolio3",
+            "applicableFilters": ["Design", "Software", "Favorites", "Published", "React"], 
+            "date": "September 2024",
+            "description": "The website you're on now!",
+            "body": "Open Source portfolio website that programatically fills in portfolio items. Designed to be easily forkable and reusable creating a JSON file with the items to display. Customising other aspects such as the color palettes will also be done through a configuration file (soon).",
+            "tech": {
+                "": ["React", "Vite", "Tailwind", "Self-hosted"]
+            }, 
+            "links": {
+                "github": "https://github.com/szstuff/portfolio3",
+                "read_more": ""
+            },
+            "media": [
+                ["", "snake.jpg", "s"]
+            
+            ]
+        },
+        ... 

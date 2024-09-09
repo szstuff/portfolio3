@@ -43,6 +43,7 @@ const Main = ({portfolioitems}) => {
     }, []);
 
     useEffect(() => {
+        elementsInView.sort()
         setCurrentCardId(elementsInView[0]) 
         }, [elementsInView]);
 

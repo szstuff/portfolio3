@@ -1,11 +1,9 @@
 { 
     "portfolioitems": [
         {   "id": "0", "type": "landingCard",
-            "name": "landingCard",
             "title": "Stilian Zagorov"
     }, 
         {   "id": "1", "type": "filtersCard",
-            "name": "filtersCard",
             "title": ""
             }, 
         {
@@ -46,7 +44,7 @@
         }, {
             "id": "4", "type": "portfolioItemCard",
             "title": "Pasty Keyboard", 
-            "date": "Summer 2024",
+            "date": "April 2024",
             "applicableFilters": ["Software", "Favorites", "Published"], 
             "description": "iOS keyboard app",
             "body": "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field.",
@@ -54,34 +52,50 @@
                 "": ["Swift", "SwiftUI", "UIKit", "SwiftData"]
             }, 
             "links": {
-                "Read More (Old Portfolio)": "https://stilian.dev/Pasty/",
+                "ToC's and Legal Information": "https://stilian.dev/Pasty/",
                 "app_store": "https://apps.apple.com/app/pasty-keyboard/id6499453192"
             },
             "logo": "pasty_logo_1.jpeg",
             "media": [
                 ["", "pasty_1.jpeg", "p"]
             ]
-        }, {
+        }, 
+        {
             "id": "5", "type": "portfolioItemCard",
-            "title": "VR Trash Demo", 
+            "title": "EPS Project", 
+            "applicableFilters": ["Design"], 
+            "date": "2024",
+            "description": "Ocean trash collection device concept",
+            "body": "Design concept for a floating ocean trash collection device created as part of my EPS (European Project Semester) project. Modelled with Shapr3D and rendered in Blender in about two days, these mockups helped us quickly visualise and present our concept to stakeholders.",
+            "designed_in": ["Blender", "Shapr3D"],
+            "links": {
+                "read_more": ""
+            },
+            "media": [
+                ["price calculation page", "zlab_demo_1.jpg", "p"],
+                ["order confirmation page", "zlab_demo_2.jpeg", "p"]
+            ]
+        }, {
+            "id": "6", "type": "portfolioItemCard",
+            "title": "VR Demo", 
             "date": "",
             "applicableFilters": ["Design", "Software"], 
-            "description": "VR Demo for generic HMDs",
-            "body": "VR demo designed for generic headsets powered by a smartphone. The application allows the user to look around a simulation of one of my prototypes collecting floating trash in the ocean. It runs on Unity using a custom camera rig controller that addresses the shortcomings of the headset used - including IPD adjustment in software and gyroscope-based tracking (as opposed to true spatial tracking).",
+            "description": "VR Demo for EPS project",
+            "body": "VR demo designed for generic HMD headsets powered by a smartphone showing a prototype of the ocean trash collection device I designed for my EPS project. The application allows the user to look around a simulation the prototype collecting floating trash in the ocean. It runs on Unity using a custom camera rig controller that addresses the shortcomings of the headset used - including IPD adjustment in software and gyroscope-based tracking (as opposed to true spatial tracking).",
             "tech": {
-                "Backend": ["Unity3D", "Shapr3D"]
+                "": ["Unity3D", "Custom camera rig controller", "Shapr3D"]
             }, 
             "media": [
                 ["demo", "vr_trash_demo_1.mp4", "l"] 
 
             ]
         }, {
-            "id": "6", "type": "portfolioItemCard",
-            "title": "Diskusjonsforum", 
-            "date": "",
+            "id": "7", "type": "portfolioItemCard",
+            "title": ".NET Discussion Forum", 
+            "date": "2023",
             "applicableFilters": ["Software", "Favorites", "Published", ".NET"], 
             "description": ".NET MVC Discussion forum",
-            "body": "Diskusjonsforum is a modern and simple MVC discussion forum webapp using technologies like NET 6.0, EntityFrameworkCore, and AspNetCore Identity. The live demo is a version of the webapp hosted on Azure, modified by me to use session cookies instead of identity as to make the demo more accessible.",
+            "body": "Diskusjonsforum is a modern and simple MVC discussion forum webapp created for a web applications university course exam. The live demo is a version of the webapp hosted on Azure, modified to use session cookies instead of identity as to make the demo more accessible for demonstration purposes.",
             "tech": {
                 "Backend": [".Net 6"],
                 "Frontend": ["Razor Views", "Bootstrap"],
@@ -92,9 +106,119 @@
                 "try_demo": "https://diskusjonsforum-demo.azurewebsites.net/",
                 "read_more": ""
             },
-            "logo": "pasty_logo_1.jpeg",
             "media": [
                 ["", "diskusjonsforum.png", "p"]
+            
+            ]
+        }, {
+            "id": "8", "type": "portfolioItemCard",
+            "title": "file transfer utility", 
+            "date": "2023",
+            "applicableFilters": ["Software", "Published"], 
+            "description": "file transfer utility with custom error handling",
+            "body": "A CLI file transfer utility with custom implementations of the Stop-And-Wait, Selective Repeat and GBN protocols the utility can create artificial network issues such as lost or duplicate packets to test the error-handling components. Created as part of a Computer Networks and Cloud Services university course.",
+            "tech": {
+                "": ["Python"]
+            }, 
+            "links": {
+                "GitHub": "https://github.com/szstuff/DATA2410_portfolio2",
+                "read_more": ""
+            },
+            "media": [
+                ["", "demo_port2_bitrate_4000.mp4", "l"]
+            
+            ]
+        }, {
+            "id": "9", "type": "portfolioItemCard",
+            "title": "network throughput utility", 
+            "date": "2023",
+            "applicableFilters": ["Software", "Published"], 
+            "description": "network throughput utility inspired by iPerf",
+            "body": "A CLI network throughput measurement utility inspired by iPerf. The utility tests the max throughput through a link between two hosts and shows statistics during and after the test. Created as part of a Computer Networks and Cloud Services university course.",
+            "tech": {
+                "": ["Python"]
+            }, 
+            "links": {
+                "GitHub": "https://github.com/szstuff/whyperf",
+                "read_more": ""
+            },
+            "media": [
+                ["", "demo_port1_bitrate_8000.mp4", "l"]
+            
+            ]
+        }, {
+            "id": "10", "type": "portfolioItemCard",
+            "title": "Lateral lock mechanism", 
+            "date": "2021",
+            "applicableFilters": ["Design"], 
+            "description": "Lateral slide-in latch with lock",
+            "body": "One of several mechanisms designed for a consumer hardware project that is under development. The lock uses magnets to provide tactile feedback when locking and can easily be manipulated with a coin.",
+            "designed_in": ["Shapr3D"]
+            , 
+            "links": {
+                "Printables": "https://www.printables.com/model/759683-lateral-slide-in-magnetic-latch-with-twist-lock",
+                "read_more": ""
+            },
+            "media": [
+                ["", "lock_detail.jpeg", "l"],
+                ["Part of parent project", "lock_parent.jpeg", "l"]
+            
+            ]
+        }, {
+            "id": "11", "type": "portfolioItemCard",
+            "title": "Snake", 
+            "date": "2021",
+            "applicableFilters": ["Software", "Published", "Favorites"], 
+            "description": "Browser-based snake game",
+            "tech": {
+                "": ["HTML", "CSS", "HTML Canvas Graphics"]
+            }, 
+            "links": {
+                "try_prod": "https://www.stilian.dev/snake"
+            },
+            "media": [
+                ["", "snake.jpg", "s"]
+            
+            ]
+        }, {
+            "id": "12", "type": "portfolioItemCard",
+            "title": "Yute", 
+            "date": "2019",
+            "applicableFilters": ["Design"], 
+            "description": "Mobile and web app concepts",
+            "body": "Designed for my youth company (UB) as part of the Entreprenourship and Business Development elective in upper secondary. Desgined to demonstrate our concept to stakeholders and Ungt Entreprenørskap's jury during their 'Propelljakten'-pitching contest.",
+            "tech": {
+                "Live Demo": ["Wordpress"],
+                "Concepts" : ["Adobe Xd"], 
+                "Graphics": ["Illustrator", "Photoshop"]
+            }
+            , 
+            "links": {
+                "read_more": ""
+            },
+            "media": [
+                ["Live website", "yute_live_1.jpeg", "l"],
+                ["Website concept", "yute_concept_web.jpeg", "l"],
+                ["App Concept", "yute_concept_mobile.jpeg", "p"]
+            
+            ]
+        }, {
+            "id": "13", "type": "portfolioItemCard",
+            "title": "Command Line Watchface", 
+            "date": "2019",
+            "applicableFilters": ["Design", "Favorites"], 
+            "description": "Watchface for Galaxy Wearables",
+            "body": "Custom watchface available on the Samsung Galaxy Store between 2018 and 2020. The watchface had over 200k downloads and an average rating of 4.8/5.",
+            "tech": {
+                "": ["Galaxy Watch Studio"]
+            }
+            , 
+            "links": {
+                "read_more": ""
+            },
+            "logo": "cli_face.jpeg",
+            "media": [
+                ["User Review", "cli_review.jpeg", "l"]
             
             ]
         }
