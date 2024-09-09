@@ -32,14 +32,14 @@ const Card = React.forwardRef(({ item }, ref) => {
           )}
           <div className=' shrink-0 w-full'> 
             <h2 className='text-sm text-slate-500'> {item.date} </h2>  
-            <h1 className='text-3xl md:text-4xl font-bold text-balance'> {item.title} </h1> 
+            <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold text-balance'> {item.title} </h1> 
             <h2 className='text-xl text-slate-500 text-balance'> {item.description} </h2>  
           </div> 
         </div>
-        <div className='col-span-full  p-0 md:p-4 text-base md:text-xl lg:max-w-[70%] xl:max-w[60%] flex-grow' > <p> {item.body} </p> </div>
+        <div className='col-span-full  p-0 md:p-4 text-sm sm:text-base md:text-xl lg:max-w-[70%] xl:max-w[60%] flex-grow' > <p> {item.body} </p> </div>
         {item.designed_in && item.designed_in.length > 0 && (
           <div className='col-span-fullp-4' >
-            <h1 className='text-2xl font-bold py-1 px-0 md:px-4'> Designed using </h1>
+            <h1 className='text-xl sm:text-2xl font-bold py-1 px-0 md:px-4'> Designed using </h1>
             <ul>
               {item.designed_in.map((value) => (
                 <li key={value}>
@@ -60,7 +60,7 @@ const Card = React.forwardRef(({ item }, ref) => {
             <div className='flex-none w-fit max-h-full snap-start
             border-y-4 border-slate-200 pl-2 overflow-y-scroll
             '>
-              <h1 className='text-4xl font-semibold pt-4 pb-6'> Technologies</h1>
+              <h1 className='text-2xl sm:text-3xl md:text-4xl font-semibold pt-4 pb-6'> Technologies</h1>
               <ul>
                 {Object.entries(item.tech).map(([techKey, techValues]) => (
                   <li key={techKey}>
@@ -118,7 +118,7 @@ const Card = React.forwardRef(({ item }, ref) => {
           }
         </div>
 
-        <div className='col-span-full flex p-0 md:p-4 space-x-4 place-content-center' > 
+        <div className='col-span-full flex p-0 md:p-4 space-x-4 place-content-center text-sm sm:text-base md:text-xl'> 
           {item.links && Object.keys(item.links).map((linkKey, index) => (
             <CardButton key={item.id + linkKey} type={linkKey} link={(linkKey == "read_more") ? item.id : item.links[linkKey]}/>
              ))}
