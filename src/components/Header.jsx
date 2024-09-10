@@ -74,14 +74,14 @@ const Header = ({title}) => {
                     className={`transition-all duration-500 transform bg-[var(--secondary)] px-0 md:px-2
                         ${currentCardId != 0 || title != null ? ' translate-y-0' : ' translate-y-32 '}`}>
                     <p className= "px-1 sm:px-2 py-1 md:mx-2 md:px-8 text-sm sm:text-lg md:text-xl border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700"> 
-                        github 
+                        GitHub
                     </p>
                 </Link>
                 <Link to={"https://www.linkedin.com/in/stilianz/"} target='_blank' 
                     className={`transition-all duration-500 transform bg-[var(--secondary)] px-2
                         ${currentCardId != 0 || title != null ? ' translate-y-0' : ' translate-y-32 '}`}>
                     <p className="px-1 sm:px-2 py-1 md:mx-2 md:px-8 text-sm sm:text-lg md:text-xl  border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700">
-                        linkedin
+                        LinkedIn
                     </p>                
                 </Link>
             </div>

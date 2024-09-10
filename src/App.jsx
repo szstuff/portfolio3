@@ -22,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
             <Route path="/:title" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
+            <Route path="/preview/:preview" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
           </Routes>
         </Router>
       </UserContext.Provider>
@@ -30,8 +31,15 @@ function App() {
 }
 
 const MainViewLoader = ({portfolioitems}) => {
-  const {title} = useParams()
-  const item = portfolioitems[portfolioitems.findIndex(item => item.title == title)]
+  const {title, preview} = useParams()
+  const itemTitle = preview || title
+  const item = portfolioitems.find(item => item.title == itemTitle);
+
+  if (preview){
+    console.log("preview: " + preview)
+    console.log("item:" + item.id)
+    return item ? (<> <Header title={title} /> <Main portfolioitems={portfolioitems} scrollTo={item.id} /> </> ): <p> Not found </p>   //TODO: implement 404 
+  }
 
   if (!title){
     return( <> <Header/> <Main portfolioitems={portfolioitems}/> </>)

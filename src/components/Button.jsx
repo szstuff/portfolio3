@@ -60,8 +60,8 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
             } else if (type == 'try_demo') {
               return (
                 <a href={link} target='_blank'>
-                  <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
-                    Try Development Build
+                  <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg text-xs md:text-base ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
+                    Try Dev Build
                   </button>
               </a>
               )

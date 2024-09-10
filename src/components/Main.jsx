@@ -5,7 +5,7 @@ import { ScrollContext } from '../App';
 import LandingCard from './LandingCard';
 import FilterOptions from './FilterOptions';
 
-const Main = ({portfolioitems}) => {
+const Main = ({portfolioitems, scrollTo}) => {
     const { currentCardId, setCurrentCardId } = useContext(UserContext);
     const elementsRef = useRef([]);  // Array of refs for each element
     const [elementsInView, setElementsInView] = useState([]); // Array of elements that are in viewport
