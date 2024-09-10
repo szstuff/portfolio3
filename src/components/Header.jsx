@@ -68,6 +68,11 @@ const Header = ({title}) => {
                             </div>
                         ))
                         }
+                        {/* Final empty div to add enough space for final element to scroll to correct position (on small displays) */}
+                         <div className='content-center pt-2'>
+                                <h3> </h3>
+                                
+                        </div>
                     </div>
                 </div>
                 <Link to={"https://github.com/szstuff/"} target='_blank' 

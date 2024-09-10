@@ -102,6 +102,29 @@ const Main = ({portfolioitems, scrollTo}) => {
             }
         }
 
+        const targetRefs = useRef([]);
+
+         // Initialize targetRefs
+    useEffect(() => {
+        targetRefs.current = targetRefs.current.slice(0, portfolioitems.length+1);
+    }, [portfolioitems.length]);
+
+        useEffect(() => {
+            console.log("Scrolling to " + scrollTo)
+            if (scrollTo > 0) {
+                // Scroll to card with index if returning from DetailCard (or to card scroll nicely when sharing links)
+                const targetElement = targetRefs.current[scrollTo];
+                if (scrollRef.current && targetElement) {
+                    if (targetElement) {
+                        scrollRef.current.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                } 
+                }
+        }, [])
+
         return (
             <div ref={scrollRef} className='bg-[color:var(--secondary)] w-screen h-[calc(100vh-60px)] snap-y snap-mandatory scroll-p-4 overflow-y-scroll'>
                 <div className='container mb-28 max-w-max h-[svh-60]'>
