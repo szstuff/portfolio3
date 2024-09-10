@@ -72,8 +72,8 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
 }
 
 @keyframes slidein {
-  0% {transform: translateX(-1em); opacity: 0.5;}
-  100% {transform: translateX(0); opacity: 1;}
+  0% {transform: translateX(-1em);}
+  100% {transform: translateX(0);}
 }
 
 @keyframes spinBackground {

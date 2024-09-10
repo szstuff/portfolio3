@@ -120,7 +120,7 @@ const Card = React.forwardRef(({ item }, ref) => {
 
         <div className='col-span-full flex p-0 md:p-4 space-x-4 place-content-center text-sm sm:text-base md:text-xl'> 
           {item.links && Object.keys(item.links).map((linkKey, index) => (
-            <CardButton key={item.id + linkKey} type={linkKey} link={(linkKey == "read_more") ? item.id : item.links[linkKey]}/>
+            <CardButton key={item.id + linkKey} type={linkKey} link={(linkKey == "read_more") ? item.title : item.links[linkKey]}/>
              ))}
           </div>
       </div>

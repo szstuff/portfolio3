@@ -21,7 +21,7 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
               </div>
               <div className='col-span-2 flex flex-row gap-4 text-sm'>
                   <p className='flex-grow shrink text-left'>{portfolioitems[3].description}</p>
-                  <Button type="read_more" link={portfolioitems[3].id} />
+                  <Button type="read_more" link={portfolioitems[3].title} />
               </div>
             </div>
 
@@ -32,7 +32,7 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
               </div>
               <div className='col-span-2 flex flex-row gap-4'>
                   <p className='flex-grow text-left'>{portfolioitems[3].description}</p>
-                  <Button type="read_more" link={portfolioitems[3].id}/>
+                  <Button type="read_more" link={portfolioitems[3].name}/>
               </div>
             </div> */}
 

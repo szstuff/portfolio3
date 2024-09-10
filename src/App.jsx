@@ -21,7 +21,7 @@ function App() {
           <meta name='viewport' content='width=device-width, initial-scale=1 '/>
           <Routes>
             <Route path="/" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
-            <Route path="/project/:id" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
+            <Route path="/:title" element={<MainViewLoader portfolioitems={portfolioitems}/>}/>
           </Routes>
         </Router>
       </UserContext.Provider>
@@ -30,14 +30,14 @@ function App() {
 }
 
 const MainViewLoader = ({portfolioitems}) => {
-  const {id} = useParams()
-  const item = portfolioitems[id]
+  const {title} = useParams()
+  const item = portfolioitems[portfolioitems.findIndex(item => item.title == title)]
 
-  if (!id){
+  if (!title){
     return( <> <Header/> <Main portfolioitems={portfolioitems}/> </>)
   }
 
-  return item ? (<> <Header id={id} /> <DetailCard item={item} /> </> ): <p> Not found </p>   //TODO: implement 404 
+  return item ? (<> <Header title={title} /> <DetailCard item={item} /> </> ): <p> Not found </p>   //TODO: implement 404 
 }
 
 export default App

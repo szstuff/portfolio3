@@ -29,7 +29,7 @@ export const CardButton = ({type, link, text, mt, mb, ml, mr, width}) => {
               )
             } else if (type == 'read_more') {
               return (
-                <Link to={`/project/${link}`} className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%] text-center`}>
+                <Link to={`/${link}`} className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%] text-center`}>
                   <button>
                     Read More
                   </button>
@@ -75,7 +75,7 @@ export const Button = ({type, link, text, mt, mb, ml, mr, width}) => {
               )
             } else if (type == 'read_more') {
               return (
-                <Link to={`/project/${link}`}>
+                <Link to={`/${link}`}>
                   <button className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shrink  ${width == 'full' && 'w-[90%] mx-[5%]'}`}>
                     Read More
                   </button>

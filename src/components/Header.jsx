@@ -6,7 +6,7 @@ import { FaArrowLeft } from 'react-icons/fa6';
 import { Link, useLocation, useParams } from 'react-router-dom';
 
 
-const Header = ({id}) => {
+const Header = ({title}) => {
     const { currentCardId } = useContext(UserContext);
     const scrollRef = useRef(null);
     const targetRefs = useRef([]);
@@ -46,10 +46,10 @@ const Header = ({id}) => {
                 <div className='flex flex-1 items-center md:justify-start'>
 
                     {/* If user is not at landing page/root: load appropriate title and back button */}
-                    {id && (
+                    {title && (
                         <div className='flex animateload'>
                             <Link to={"/"}><FaArrowLeft className='ml-2 mr-4 h-[60px] size-6'/></Link>
-                            <h3 className='h-[60px] content-center text-2xl sm:text-3xl md:text-4xl'> {portfolioitems[id]?.title ?? "Stilian Zagorov"} </h3>
+                            <h3 className='h-[60px] content-center text-2xl sm:text-3xl md:text-4xl'> {title ?? "Stilian Zagorov"} </h3>
                         </div>
                     )}
                     
@@ -57,7 +57,7 @@ const Header = ({id}) => {
                         using css hide instead of conditional rendering (because 
                         the latter breaks the scroll effect when navigating back to root from a path)
                     */}
-                    <div ref={scrollRef} className={`h-[60px] overflow-y-hidden px-4 pt-6 shrink-0 ${id && 'hidden'}`} >
+                    <div ref={scrollRef} className={`h-[60px] overflow-y-hidden px-4 pt-6 shrink-0 ${title && 'hidden'}`} >
                         {portfolioitems.map((item, index) => (
                             <div key={item.id} ref={(el) => setRef(el, index)}
                                 className='content-center pt-2'
@@ -72,14 +72,14 @@ const Header = ({id}) => {
                 </div>
                 <Link to={"https://github.com/szstuff/"} target='_blank' 
                     className={`transition-all duration-500 transform bg-[var(--secondary)] px-0 md:px-2
-                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-32 '}`}>
+                        ${currentCardId != 0 || title != null ? ' translate-y-0' : ' translate-y-32 '}`}>
                     <p className= "px-1 sm:px-2 py-1 md:mx-2 md:px-8 text-sm sm:text-lg md:text-xl border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700"> 
                         github 
                     </p>
                 </Link>
                 <Link to={"https://www.linkedin.com/in/stilianz/"} target='_blank' 
                     className={`transition-all duration-500 transform bg-[var(--secondary)] px-2
-                        ${currentCardId != 0 ? ' translate-y-0' : ' translate-y-32 '}`}>
+                        ${currentCardId != 0 || title != null ? ' translate-y-0' : ' translate-y-32 '}`}>
                     <p className="px-1 sm:px-2 py-1 md:mx-2 md:px-8 text-sm sm:text-lg md:text-xl  border-slate-200 border-2 rounded-lg hover:bg-slate-200 hover:text-slate-700">
                         linkedin
                     </p>                
