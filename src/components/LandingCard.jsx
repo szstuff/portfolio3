@@ -25,17 +25,6 @@ const LandingCard = React.forwardRef(({filters, setFilters}, ref) => {
               </div>
             </div>
 
-            {/* <div className='card grid grid-cols-2 rounded-lg gap-4 px-6 py-4'>
-              <div className='col-span-2 flex justify-between items-center'>
-                  <h3 className='font-semibold text-2xl'>{portfolioitems[3].title}</h3>
-                  <Button link={portfolioitems[3].links.try_demo} text={"Try Demo"}> Try </Button>
-              </div>
-              <div className='col-span-2 flex flex-row gap-4'>
-                  <p className='flex-grow text-left'>{portfolioitems[3].description}</p>
-                  <Button type="read_more" link={portfolioitems[3].name}/>
-              </div>
-            </div> */}
-
           </div>
 
           <div className='col-span-1 md:col-span-2 order-2 lg:mx-8 xl:mx-12 grow content-center'>
