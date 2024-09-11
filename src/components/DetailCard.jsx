@@ -9,7 +9,6 @@ const DetailCard = ({item}) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(overviewStuck + ": " + scrollRef.current.scrollTop);
       if (scrollRef.current.scrollTop > 16) {
         setOverviewStuck(true)
       } 
