@@ -104,7 +104,7 @@ const DetailCard = ({item}) => {
 
           <hr className='col-span-full my-2'></hr>
 
-          <div className='col-span-full mt-12 grid gap-6 space-y-4 grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-8'>
+          <div className='col-span-full mt-12 grid gap-6 space-y-4 grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-8 mb-12'>
             {item.media && item.media.length > 0 && (
               item.media.map(([title, media, aspectRatio], index) => {
               const extension = media.split(".").pop();  // Get file extension
@@ -146,8 +146,6 @@ const DetailCard = ({item}) => {
             }))
             }
           </div>
-          {/* Extra padding for Safari */}
-          <div className='col-span-full h=[20lvh]'> </div>  
         </div>
   )
 }
