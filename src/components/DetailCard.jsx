@@ -29,7 +29,7 @@ const DetailCard = ({item}) => {
   }, [overviewStuck])
 
   return (
-        <div ref={scrollRef} className='grid grid-cols-4 gap-4 overflow-y-scroll h-[calc(100vh-60px)] 
+        <div ref={scrollRef} className='grid grid-cols-4 gap-4 overflow-y-scroll h-[calc(100lvh-60px)] w-[100vw] 
         bg-slate-100 
         '>
           {/* new overview */}
