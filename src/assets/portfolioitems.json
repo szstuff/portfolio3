@@ -61,23 +61,8 @@
                 ["", "pasty_1.jpeg", "p"]
             ]
         }, 
-        {
+         {
             "id": "5", "type": "portfolioItemCard",
-            "title": "EPS Project", 
-            "applicableFilters": ["Design"], 
-            "date": "2024",
-            "description": "Ocean trash collection device concept",
-            "body": "Design concept for a floating ocean trash collection device created as part of my EPS (European Project Semester) project. Modelled with Shapr3D and rendered in Blender in about two days, these mockups helped us quickly visualise and present our concept to stakeholders.",
-            "designed_in": ["Blender", "Shapr3D"],
-            "links": {
-                "read_more": ""
-            },
-            "media": [
-                ["price calculation page", "zlab_demo_1.jpg", "p"],
-                ["order confirmation page", "zlab_demo_2.jpeg", "p"]
-            ]
-        }, {
-            "id": "6", "type": "portfolioItemCard",
             "title": "VR Demo", 
             "date": "",
             "applicableFilters": ["Design", "Software"], 
@@ -94,7 +79,7 @@
 
             ]
         }, {
-            "id": "7", "type": "portfolioItemCard",
+            "id": "6", "type": "portfolioItemCard",
             "title": ".NET Discussion Forum", 
             "date": "2023",
             "applicableFilters": ["Software", "Favorites", "Published", ".NET"], 
@@ -115,7 +100,7 @@
             
             ]
         }, {
-            "id": "8", "type": "portfolioItemCard",
+            "id": "7", "type": "portfolioItemCard",
             "title": "file transfer utility", 
             "date": "2023",
             "applicableFilters": ["Software", "Published"], 
@@ -132,7 +117,7 @@
             
             ]
         }, {
-            "id": "9", "type": "portfolioItemCard",
+            "id": "8", "type": "portfolioItemCard",
             "title": "network throughput utility", 
             "date": "2023",
             "applicableFilters": ["Software", "Published"], 
@@ -149,7 +134,7 @@
             
             ]
         }, {
-            "id": "10", "type": "portfolioItemCard",
+            "id": "9", "type": "portfolioItemCard",
             "title": "Lateral lock mechanism", 
             "date": "2021",
             "applicableFilters": ["Design"], 
@@ -167,7 +152,7 @@
             
             ]
         }, {
-            "id": "11", "type": "portfolioItemCard",
+            "id": "10", "type": "portfolioItemCard",
             "title": "Snake", 
             "date": "2021",
             "applicableFilters": ["Software", "Published", "Favorites"], 
@@ -183,7 +168,7 @@
             
             ]
         }, {
-            "id": "12", "type": "portfolioItemCard",
+            "id": "11", "type": "portfolioItemCard",
             "title": "Yute", 
             "date": "2019",
             "applicableFilters": ["Design"], 
@@ -205,7 +190,7 @@
             
             ]
         }, {
-            "id": "13", "type": "portfolioItemCard",
+            "id": "12", "type": "portfolioItemCard",
             "title": "Command Line Watchface", 
             "date": "2019",
             "applicableFilters": ["Design", "Favorites"], 
