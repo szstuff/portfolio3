@@ -64,7 +64,7 @@ const DetailCard = ({item}) => {
           </div> 
 
           {/*  Technologies */}
-          <div className='col-span-4 md:col-span-2 w-[90%] mx-8
+          <div className='col-span-4 md:col-span-2 max-w-[90%] mx-8
           ' > 
             {item.tech && Object.keys(item.tech).length > 0 && (
                 <div className='max-w-[80vw] lg:max-w-[70vw]
