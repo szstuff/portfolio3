@@ -26,6 +26,45 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
   --text: #19747E;
 }
 
+/* Style for DetailCard's overview container when it's stuck to header */
+.detailCardOverview {
+  width: 96vw;
+  margin-left: 2vw;
+
+  animation: overviewCardExpand 0.5s ease;
+}
+
+.detailCardOverviewStuck {
+animation: overviewCardCollapse 0.5s ease;
+width: 100vw;
+border-radius: 0;
+margin-left: 0;
+background: linear-gradient(to right, var(--accent), var(--primary)); /* Optional: Same gradient */
+position: fixed;
+top: 44px;
+}
+
+/* Hide item title since it's already visible in the header. Shrink logo so the overview container doesn't take up vertical space */
+.detailCardOverviewStuck h1{
+  display: none;
+}
+.detailCardOverviewStuck img{
+  transition: all 2s ease;
+  height: 60px;
+}
+
+@keyframes overviewCardCollapse {
+  0% {width: 96vw; margin-left: 2vw; border-radius: 0.5rem;}
+  100% {width: 100vw; margin-left: 0; border-radius: 0;}
+}
+
+@keyframes overviewCardExpand {
+  0% {width: 100vw; margin-left: 0; border-radius: 0;}
+  100% {width: 96vw; margin-left: 2vw; border-radius: 0.5rem;}
+}
+
+
+
 /* Filter button */
 .filterButton{
   padding: 10px 5px;
