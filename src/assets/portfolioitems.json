@@ -31,7 +31,7 @@
             "tech": {
                 "Backend": [".Net 8", "Self-hosted"],
                 "Frontend": ["Razor Views", "Bootstrap", "Three.JS"],
-                "": ["MVVM", "Vipps Integration", "SQLite", "Identity and Access Control", "Email Sender with Brevo", "Localization"]
+                "": ["Vipps Integration", "SQLite", "Identity and Access Control", "Email Sender with Brevo", "Localization"]
             }, 
             "links": {
                 "try_demo": "https://zlab.no/",
