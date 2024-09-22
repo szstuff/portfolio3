@@ -52,7 +52,7 @@ const Card = React.forwardRef(({ item }, ref) => {
           </div>
         )}
 
-        <div className='col-span-full flex grow w-auto  max-h-[70vh]
+        <div className='col-span-full flex max-h-[70vh] w-fit
         overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6
         horizontalscrollcontainer
         ' > 
@@ -80,38 +80,39 @@ const Card = React.forwardRef(({ item }, ref) => {
               const extension = media.split(".").pop();  // Get file extension
                 if (extension === "mp4") {
                   return (
-                    <div key={index} className={`flex-none w-fit
-                    {title ? "h-[90%]" : "h-[100%]"} 
-                    w-[90vw] lg:w-[80vw] snap-start`}>
-                      {title && (
-                        <p className='text-center font-thin text-xl h-[5%]'> {title} </p>
-                      )}
-                      <video controls 
-                        className={`${title ? 'h-[90%] mt-[1%]' : 'h-full'} w-full object-contain
-                        border-2 border-slate-500 rounded-lg
+                    <video controls 
+                        className={`${'h-full'} w-full object-contain snap-start
+                        rounded-lg
                         `}>
                         <source src={`/src/assets/media/${media}`} type='video/mp4' />
                         Your browser does not support this video format.
                       </video>
-                    </div>
                   );
                 } else {
                 return (
-                  <div key={index} className={`flex-none max-w-[80%] 
-                  max-h-full snap-start`}>
-                      {title && (
-                        <p className='text-center font-thin text-xl h-[5%] mb-[5%] w-fit'> {title} </p>
-                      )} 
+                  
+                  //IMG title removed from landing page to work around incorrect div width issue in safari 
+                      // {title && (
+                      //   <p className='text-center font-thin text-xl h-[5%] mb-[2%] w-fit '> {title} </p>
+                      // )}  
+
+                  // Tailwind classes with title accomodation:
+                      //  ${aspectRatio == "p" && (title ? 'h-[92%] w-auto' : 'h-[100%]')} // portrait
+                      //  ${aspectRatio == "s" && (title ? 'max-w-[90%] h-auto max-h-[90%]' : 'max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
+                      //  ${aspectRatio == "l" && (title ? 'w-[100%] h-auto max-h-[90%]' : 'w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
+                      //  ${aspectRatio == undefined && (title ? 'max-h-[90%] max-w-[90%] w-auto h-auto' : 'max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
+     
+
                     <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} 
                       className={` inline-block
-                        //Set dimensions based on aspect ratio and title (to accomodate title height) 
-                        
-                      ${aspectRatio == "p" && (title ? 'h-[92%] w-auto' : 'h-[100%]')} // portrait
-                      ${aspectRatio == "s" && (title ? 'max-w-[90%] h-auto max-h-[90%]' : 'max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
-                      ${aspectRatio == "l" && (title ? 'w-[100%] h-auto max-h-[90%]' : 'w-[100%] h-auto max-h-[90%] my-[5%]')} // square
-                      ${aspectRatio == undefined && (title ? 'max-h-[90%] max-w-[90%] w-auto h-auto' : 'max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // square
+                        snap-start
+                        //Set dimensions based on aspect ratio                 
+                      ${aspectRatio == "p" && ('h-[100%]')} // portrait
+                      ${aspectRatio == "s" && ('max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
+                      ${aspectRatio == "l" && ('w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
+                      ${aspectRatio == undefined && ('max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
                       border-2 border-slate-500 rounded-lg`} />
-                  </div>
+                
                 );
               }
             }))
