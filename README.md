@@ -1,10 +1,10 @@
 # Portfolio3: A React Portfolio Website Template
 
-**Note:** This project is still under development. The code is not fully polished and commented, so forking at this time might require some more tinkering. This README is also incomplete.
+**Note:** This project is still under development. The code is not fully polished and commented, so forking at this time might require some more love. This README is also incomplete.
 
 When deciding to redesign my portfolio, I realized that it's unnecessarily time-consuming to hard-code projects. **Portfolio3** programmatically loads portfolio items from a config file rather than having the portfolio items hard-coded in. I am working on updating the fixed code (e.g. for the "What I'm working on now" card on the landing page, colors, etc.) to instead load from a config file as well.
 
-The name "Portfolio3" reflects this project being my third portfolio iteration, with the second being an earlier version of this design with hard-coded content.
+The creative and original name, "Portfolio3", reflects this project being my third portfolio iteration, with the second being an earlier version of this design with hard-coded content.
 
 ## Setup
 
@@ -60,9 +60,22 @@ All items should have an `id`, `type`, and `title`.
                 "read_more": ""
             },
             "media": [
-                ["", "snake.jpg", "s"]
+                ["", "snake.jpg", "s", "ALT TEXT FOR ACCESSIBILITY"]
             ]
         }
     ]
 }
 ```
+#TODO
+##Features/changes
+- Apply colors using JSON config-file
+- Restructure JSON files/parsing to be more flexible with custom titles and bullet points (instead of "Technologies")
+- In DetailCard Component, move buttons inside to overview so they display next to the description 
+
+##Bugs
+- [Intermittent] Some images are stretched in Safari (e.g. the images of the lock mechanism)
+- [Intermittent] Some cards load with the scrollContainer already having scrolled past the text items. Observed more often with the cards that have 16:9 videos as their first/only media item (e.g. the python network utilities)
+- Socials links appear in the header on load before translating off screen (unsure if this needs to be fixed, it's kind of cute)
+- Same as above with card title, but it scrolls the other way 
+- In DetailCard Component, media items sometimes cover their text if it's long  
+- Some components appear to update uneccesarily often (e.g uncomment the console.logs in ScrollContainer.) Implement React Memo?

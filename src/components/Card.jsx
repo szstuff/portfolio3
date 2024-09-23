@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { CardButton } from "./Button";
+import ScrollContainer from './ScrollContainer';
 
 
 // Tech object: 
@@ -52,72 +53,7 @@ const Card = React.forwardRef(({ item }, ref) => {
           </div>
         )}
 
-        <div className='col-span-full flex max-h-[70vh] w-fit
-        overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6
-        horizontalscrollcontainer
-        ' > 
-        {item.tech && Object.keys(item.tech).length > 0 && (
-            <div className='flex-none w-fit max-h-full snap-start
-            border-y-4 border-slate-200 pl-2 overflow-y-scroll
-            '>
-              <h1 className='text-2xl sm:text-3xl md:text-4xl font-semibold pt-4 pb-6'> Technologies</h1>
-              <ul>
-                {Object.entries(item.tech).map(([techKey, techValues]) => (
-                  <li key={techKey}>
-                    <h2 className='text-xl font-light w-auto border-t-2 border-slate-400 '>{techKey}</h2>
-                    <ul className='list-disc pl-4 mb-4'>
-                      {techValues.map((techItem, index) => (
-                        <li key={index} className='text-xl font-extralight'>{techItem}</li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-            {item.media && item.media.length > 0 && (
-              item.media.map(([title, media, aspectRatio], index) => {
-              const extension = media.split(".").pop();  // Get file extension
-                if (extension === "mp4") {
-                  return (
-                    <video controls 
-                        className={`${'h-full'} w-full object-contain snap-start
-                        rounded-lg
-                        `}>
-                        <source src={`/src/assets/media/${media}`} type='video/mp4' />
-                        Your browser does not support this video format.
-                      </video>
-                  );
-                } else {
-                return (
-                  
-                  //IMG title removed from landing page to work around incorrect div width issue in safari 
-                      // {title && (
-                      //   <p className='text-center font-thin text-xl h-[5%] mb-[2%] w-fit '> {title} </p>
-                      // )}  
-
-                  // Tailwind classes with title accomodation:
-                      //  ${aspectRatio == "p" && (title ? 'h-[92%] w-auto' : 'h-[100%]')} // portrait
-                      //  ${aspectRatio == "s" && (title ? 'max-w-[90%] h-auto max-h-[90%]' : 'max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
-                      //  ${aspectRatio == "l" && (title ? 'w-[100%] h-auto max-h-[90%]' : 'w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
-                      //  ${aspectRatio == undefined && (title ? 'max-h-[90%] max-w-[90%] w-auto h-auto' : 'max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
-     
-
-                    <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} 
-                      className={` inline-block
-                        snap-start
-                        //Set dimensions based on aspect ratio                 
-                      ${aspectRatio == "p" && ('h-[100%]')} // portrait
-                      ${aspectRatio == "s" && ('max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
-                      ${aspectRatio == "l" && ('w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
-                      ${aspectRatio == undefined && ('max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
-                      border-2 border-slate-500 rounded-lg`} />
-                
-                );
-              }
-            }))
-          }
-        </div>
+        <ScrollContainer scrollContainerItems={item.scrollContainerItems}/>
 
         <div className='col-span-full flex p-0 md:p-4 space-x-4 place-content-center text-sm sm:text-base md:text-xl'> 
           {item.links && Object.keys(item.links).map((linkKey, index) => (
