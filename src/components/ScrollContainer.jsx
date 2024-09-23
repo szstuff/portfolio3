@@ -45,8 +45,7 @@ const ScrollContainer = ({scrollContainerItems}) => {
 
       const mediaItems = scrollContainerItems.media;
       
-      
-      const renderMedia = () => 
+      const renderMedia = (mediaItems) => 
         //Check if there are any media items. If not, set to empty fragment 
         (mediaItems) ? (
         mediaItems.map((mediaItem, index) => {
@@ -56,13 +55,15 @@ const ScrollContainer = ({scrollContainerItems}) => {
             const aspectRatio = mediaItem[2]
             const altText = mediaItem[3]
                 if (extension === "mp4") {
-                    <video controls 
+                    return(
+                    <video controls key={index}
                         className={`${'h-full'} w-full object-contain snap-start
                         rounded-lg
                         `}>
                         <source src={`/src/assets/media/${path}`} type='video/mp4' />
                         Your browser does not support this video format.
                       </video>
+                    )
                 } else {
                   
                   //IMG title removed from landing page to work around incorrect div width issue in safari 
@@ -76,7 +77,7 @@ const ScrollContainer = ({scrollContainerItems}) => {
                       //  ${aspectRatio == "l" && (title ? 'w-[100%] h-auto max-h-[90%]' : 'w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
                       //  ${aspectRatio == undefined && (title ? 'max-h-[90%] max-w-[90%] w-auto h-auto' : 'max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
      
-
+                      return(
                     <img src={`/src/assets/media/${path}`} alt={altText} 
                       className={` inline-block
                         snap-start
@@ -86,13 +87,14 @@ const ScrollContainer = ({scrollContainerItems}) => {
                       ${aspectRatio == "l" && ('w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
                       ${aspectRatio == undefined && ('max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
                       border-2 border-slate-500 rounded-lg`} />
-                
+                      )
                   }
             }
         )
     ) : (
         <></>
     )
+    console.log(renderMedia)
     // console.log("text items: " + textItems.length)
     // console.log("media items: " + mediaItems?.length)
 
@@ -100,12 +102,9 @@ const ScrollContainer = ({scrollContainerItems}) => {
     
     <div className='col-span-full flex max-h-[70vh] w-fit overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6 horizontalscrollcontainer'>
       {renderSection()}
-
-      {scrollContainerItems.media && (
         <div className='flex-none w-fit max-h-full snap-start'>
-          {renderMedia()}
+          {renderMedia(mediaItems)}
         </div>
-      )}
     </div>
 
   )

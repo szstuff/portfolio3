@@ -70,7 +70,8 @@ All items should have an `id`, `type`, and `title`.
 ##Features/changes
 - Apply colors using JSON config-file
 - Restructure JSON files/parsing to be more flexible with custom titles and bullet points (instead of "Technologies")
-- In DetailCard Component, move buttons inside to overview so they display next to the description 
+- [maybe] In DetailCard Component, move buttons inside to overview so they display next to the description 
+- Add highlighted projects on landing page (by e.g. defining "highlightedProjects: [1, 3, 5]" in JSON file)
 
 ##Bugs
 - [Intermittent] Some images are stretched in Safari (e.g. the images of the lock mechanism)
@@ -78,4 +79,4 @@ All items should have an `id`, `type`, and `title`.
 - Socials links appear in the header on load before translating off screen (unsure if this needs to be fixed, it's kind of cute)
 - Same as above with card title, but it scrolls the other way 
 - In DetailCard Component, media items sometimes cover their text if it's long  
-- Some components appear to update uneccesarily often (e.g uncomment the console.logs in ScrollContainer.) Implement React Memo?
+- Some components appear to update uneccesarily often (e.g in ScrollContainer - uncomment the console.logs to see.) Implement React Memo?
