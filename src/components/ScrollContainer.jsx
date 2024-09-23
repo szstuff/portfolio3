@@ -79,14 +79,14 @@ const ScrollContainer = ({scrollContainerItems}) => {
      
                       return(
                     <img src={`/src/assets/media/${path}`} alt={altText} 
-                      className={` inline-block
+                      className={` inline-block 
                         snap-start
                         //Set dimensions based on aspect ratio                 
                       ${aspectRatio == "p" && ('h-[100%]')} // portrait
                       ${aspectRatio == "s" && ('max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
                       ${aspectRatio == "l" && ('w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
                       ${aspectRatio == undefined && ('max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
-                      border-2 border-slate-500 rounded-lg`} />
+                      border-2 border-slate-500 rounded-lg mx-2`} />
                       )
                   }
             }
@@ -102,7 +102,7 @@ const ScrollContainer = ({scrollContainerItems}) => {
     
     <div className='col-span-full flex max-h-[70vh] w-fit overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6 horizontalscrollcontainer'>
       {renderSection()}
-        <div className='flex-none w-fit max-h-full snap-start'>
+        <div className='flex flex-row w-fit max-h-full snap-start'>
           {renderMedia(mediaItems)}
         </div>
     </div>

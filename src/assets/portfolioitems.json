@@ -45,9 +45,7 @@
                 "Technologies": {
                     "Backend": [".Net 8", "Self-hosted"],
                     "Frontend": ["Razor Views", "Bootstrap", "Three.JS"],
-                    "": ["Vipps Integration", "SQLite", "Identity and Access Control", "Email Sender with Brevo", "Localization"]                },
-                "DesginedIn": {
-                    "Images": ["photoshop", "illustrator"]
+                    "": ["Vipps Integration", "SQLite", "Identity and Access Control", "Email Sender with Brevo", "Localization"]                
                 },
                 "media": [
                 ["Upload model and pick a filament", "zlab_orderpage.jpeg", "p"],
