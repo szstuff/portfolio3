@@ -12,21 +12,16 @@
             "applicableFilters": ["Design", "Software", "Favorites", "Published", "React"], 
             "date": "September 2024",
             "description": "The website you're on now!",
-            "body": "Open Source portfolio website that programatically fills in portfolio items. Designed to be easily forkable and reusable creating a JSON file with the items to display. Customising other aspects such as the color palettes will also be done through a configuration file (soon).",
+            "body": "Portfolio website that programatically fills in portfolio items. Designed to be easily forkable and reusable using a JSON file with the items to display. ",
             "scrollContainerItems": {
-                "Technologies": {
-                    "Title": ["hello", "hello2"]
-                },
-                "DesginedIn": {
-                    "Images": ["photoshop", "illustrator"]
+                "Built with": {
+                    "": ["React", "Vite", "Tailwind", "Self-hosted"]
+                }, "Fork me!": {
+                    "": ["Open Source", "Easily customisable"]
                 }
             },
-            
-            "tech": {
-                "": ["React", "Vite", "Tailwind", "Self-hosted"]
-            }, 
             "links": {
-                "github": "https://github.com/szstuff/portfolio3",
+                "Repo": "https://github.com/szstuff/portfolio3",
                 "read_more": ""
             }
         },
@@ -48,9 +43,9 @@
                     "": ["Vipps Integration", "SQLite", "Identity and Access Control", "Email Sender with Brevo", "Localization"]                
                 },
                 "media": [
-                ["Upload model and pick a filament", "zlab_orderpage.jpeg", "p"],
-                ["", "zlab_orderoverviewpage.jpeg", "p"],
-                ["Vipps integration", "zlab_vipps.jpeg", "p"]
+                ["Upload model and pick a filament", "zlab_orderpage.jpeg", "p", "Screenshot of the ZLab webapp's model upload page. A preview of the uploaded 3D model of an impeller is shown under a button reading 'Upload model'. Below, a matrix shows the price of different filaments and quality levels."],
+                ["", "zlab_orderoverviewpage.jpeg", "p", "Screenshot of the ZLab webapp's order form shown after uploading a model. The page contains an explanation of the order status, options to change the model, filament, quality, delivery address and order note. To the right is an order summary stylised as a paper receipt showing a preview of the model and the user's selected settings and order details."],
+                ["Vipps integration", "zlab_vipps.jpeg", "p", "Screenshot of the Vipps payment page prompting the user to enter their phone number and pay 255 NOK to ZLab."]
             ]
             }
             
@@ -61,17 +56,19 @@
             "applicableFilters": ["Software", "Favorites", "Published"], 
             "description": "iOS keyboard app",
             "body": "iOS and iPadOS app developed in Swift using frameworks like SwiftUI, UIKit and SwiftData. Pasty allows the user to quickly paste pre-defined snippets of text in any text field.",
-            "tech": {
-                "": ["Swift", "SwiftUI", "UIKit", "SwiftData"]
-            }, 
+            "scrollContainerItems": {
+                "Built with": {
+                    "": ["Swift", "SwiftUI", "UIKit", "SwiftData"]
+                }, "media": [
+                ["", "pasty_1.jpeg", "p", "Screenshot of the Messages app on iPhone with the Pasty keyboard open below. The keyboard has multiple snippets containing customer replies and the input field has one of these snippets pasted in."]
+            ]
+            },
             "links": {
-                "ToS and Legal Information": "https://stilian.dev/Pasty/",
+                "Read More + T&Cs": "https://stilian.dev/Pasty/",
                 "app_store": "https://apps.apple.com/app/pasty-keyboard/id6499453192"
             },
-            "logo": "pasty_logo_1.jpeg",
-            "media": [
-                ["", "pasty_1.jpeg", "p"]
-            ]
+            "logo": "pasty_logo_1.jpeg"
+            
         }, 
          {
             "id": "5", "type": "portfolioItemCard",
@@ -80,16 +77,16 @@
             "applicableFilters": ["Design", "Software"], 
             "description": "VR Demo for EPS project",
             "body": "VR demo designed for generic HMD headsets powered by a smartphone showing a prototype of the ocean trash collection device I designed for my EPS project. The application allows the user to look around a simulation the prototype collecting floating trash in the ocean. It runs on Unity using a custom camera rig controller that addresses the shortcomings of the headset used - including IPD adjustment in software and gyroscope-based tracking (as opposed to true spatial tracking).",
-            "tech": {
-                "": ["Unity3D", "Custom camera rig controller", "Shapr3D"]
-            }, 
+            "scrollContainerItems": {
+                "Technologies": {
+                    "": ["Unity3D", "Custom camera rig controller", "Shapr3D"]
+                }, "media": [
+                    ["demo", "vr_trash_demo_1.mp4", "l"]
+            ]
+            },
             "links": {
                 "read_more": ""
-            },
-            "media": [
-                ["demo", "vr_trash_demo_1.mp4", "l"] 
-
-            ]
+            }
         }, {
             "id": "6", "type": "portfolioItemCard",
             "title": ".NET Discussion Forum", 
@@ -97,88 +94,91 @@
             "applicableFilters": ["Software", "Favorites", "Published", ".NET"], 
             "description": ".NET MVC Discussion forum",
             "body": "Diskusjonsforum is a modern and simple MVC discussion forum webapp created for a web applications university course exam. The live demo is a version of the webapp hosted on Azure, modified to use session cookies instead of identity as to make the demo more accessible for demonstration purposes.",
-            "tech": {
-                "Backend": [".Net 6"],
-                "Frontend": ["Razor Views", "Bootstrap"],
-                "": ["MVVM", "ASP.NET Identity"]
-            }, 
+            "scrollContainerItems": {
+                "Technologies":{
+                    "Backend": [".Net 6"],
+                    "Frontend": ["Razor Views", "Bootstrap"],
+                    "": ["MVVM", "ASP.NET Identity"]
+                }, "media": [
+                    ["", "diskusjonsforum.png", "l"]
+                ]
+            },
             "links": {
-                "GitHub": "https://github.com/szstuff/diskusjonsforum_ITPE3200",
+                "Repo": "https://github.com/szstuff/diskusjonsforum_ITPE3200",
                 "try_demo": "https://diskusjonsforum-demo.azurewebsites.net/",
                 "read_more": ""
-            },
-            "media": [
-                ["", "diskusjonsforum.png", "l"]
-            
-            ]
+            }
         }, {
             "id": "7", "type": "portfolioItemCard",
             "title": "file transfer utility", 
             "date": "2023",
             "applicableFilters": ["Software", "Published"], 
             "body": "A CLI file transfer utility with custom implementations of the Stop-And-Wait, Selective Repeat and GBN protocols the utility can create artificial network issues such as lost or duplicate packets to test the error-handling components. Created as part of a Computer Networks and Cloud Services university course.",
-            "tech": {
-                "": ["Python"]
-            }, 
-            "links": {
-                "GitHub": "https://github.com/szstuff/DATA2410_portfolio2",
-                "read_more": ""
+            "scrollContainerItems": {
+                "Made with":{
+                    "": ["Python"]
+                }, "media": [
+                    ["", "demo_port2_bitrate_4000.mp4", "l"]
+                ]
             },
-            "media": [
-                ["", "demo_port2_bitrate_4000.mp4", "l"]
             
-            ]
+            "links": {
+                "Repo": "https://github.com/szstuff/DATA2410_portfolio2",
+                "read_more": ""
+            }
         }, {
             "id": "8", "type": "portfolioItemCard",
             "title": "network throughput utility", 
             "date": "2023",
             "applicableFilters": ["Software", "Published"], 
             "body": "A CLI network throughput measurement utility inspired by iPerf. The utility tests the max throughput through a link between two hosts and shows statistics during and after the test. Created as part of a Computer Networks and Cloud Services university course.",
-            "tech": {
-                "": ["Python"]
-            }, 
-            "links": {
-                "GitHub": "https://github.com/szstuff/whyperf",
-                "read_more": ""
+            "scrollContainerItems": {
+                "Made with":{
+                    "": ["Python"]
+                }, "media": [
+                    ["", "demo_port1_bitrate_8000.mp4", "l"]
+                ]
             },
-            "media": [
-                ["", "demo_port1_bitrate_8000.mp4", "l"]
-            
-            ]
+            "links": {
+                "Repo": "https://github.com/szstuff/whyperf",
+                "read_more": ""
+            }
         }, {
             "id": "9", "type": "portfolioItemCard",
             "title": "Lateral lock mechanism", 
             "date": "2021",
             "applicableFilters": ["Design"], 
             "description": "Slide-in latch with lock",
-            "body": "One of several mechanisms designed for a consumer hardware project that is under development. The lock uses magnets to provide tactile feedback when locking and can easily be manipulated with a coin.",
-            "designed_in": ["Shapr3D"]
-            , 
+            "body": "One of several mechanisms designed for a consumer hardware project. The lock uses magnets to provide tactile feedback when locking and can easily be manipulated with a coin.",
+            
+            "scrollContainerItems": {
+                "Designed With":{
+                    "": ["Shapr3D", "Rapid Prototyping"]
+                }, "media": [    
+                    ["", "lock_detail.jpeg", "l", "Screenshot of a 3D-model showing 2 parts of the lock mechanism, with a lid to their right. The middle part has a round piece with a latch that can be spun. The left part has an extrusion with an opening for the latch to slide in to."]
+                ]
+            },
+            
             "links": {
                 "Printables": "https://www.printables.com/model/759683-lateral-slide-in-magnetic-latch-with-twist-lock",
                 "read_more": ""
-            },
-            "media": [
-                ["", "lock_detail.jpeg", "l"],
-                ["Part of parent project", "lock_parent.jpeg", "l"]
-            
-            ]
+            }
         }, {
             "id": "10", "type": "portfolioItemCard",
             "title": "Snake", 
             "date": "2021",
             "applicableFilters": ["Software", "Published", "Favorites"], 
             "description": "Browser-based snake game",
-            "tech": {
-                "": ["HTML", "CSS", "HTML Canvas Graphics"]
-            }, 
+            "scrollContainerItems": {
+                "Designed With":{
+                    "": ["HTML", "CSS", "HTML Canvas Graphics"]
+                }, "media": [    
+                    ["", "snake.jpg", "s", "Screenshot of a browser window running a snake game. The snake and pickups are made up of big squares. The background is an image of a Nokia 3310."]
+                ]
+            },
             "links": {
                 "try_prod": "https://www.stilian.dev/snake"
-            },
-            "media": [
-                ["", "snake.jpg", "s"]
-            
-            ]
+            }
         }, {
             "id": "11", "type": "portfolioItemCard",
             "title": "Yute", 
@@ -186,21 +186,20 @@
             "applicableFilters": ["Design"], 
             "description": "Mobile and web app concepts",
             "body": "Designed for my youth company (UB) as part of the Entreprenourship and Business Development elective in upper secondary. Desgined to demonstrate our concept to stakeholders and Ungt Entreprenørskap's jury during their 'Propelljakten'-pitching contest.",
-            "tech": {
-                "Live Demo": ["Wordpress"],
-                "Concepts" : ["Adobe Xd"], 
-                "Graphics": ["Illustrator", "Photoshop"]
-            }
-            , 
+            "scrollContainerItems": {
+                "Made with": {
+                    "Live Demo": ["Wordpress", "Custom HTML, CSS and JS"],
+                    "Concept screenshots" : ["Adobe Xd"], 
+                    "Graphics": ["Illustrator", "Photoshop"]
+                }, "media": [    
+                    ["Live website", "yute_live_1.jpeg", "l", "Image of a laptop showing a website with a purple background and green accents. The website contains a description of the project in Norwegian and 3 boxes advertising various jobs."],
+                    ["Website concept", "yute_concept_web.jpeg", "l", "Image of a laptop showing a website with a purple background and green accents. The website contains 6 boxes with blue backgrounds and images advertising various jobs."],
+                    ["App Concept", "yute_concept_mobile.jpeg", "p", "Screenshot of a phone app showing a job advertisement with an image and short description."]
+            ]
+            },
             "links": {
                 "read_more": ""
-            },
-            "media": [
-                ["Live website", "yute_live_1.jpeg", "l"],
-                ["Website concept", "yute_concept_web.jpeg", "l"],
-                ["App Concept", "yute_concept_mobile.jpeg", "p"]
-            
-            ]
+            }
         }, {
             "id": "12", "type": "portfolioItemCard",
             "title": "Command Line Watchface", 
@@ -208,18 +207,18 @@
             "applicableFilters": ["Design", "Favorites"], 
             "description": "Watchface for Galaxy Wearables",
             "body": "Custom watchface available on the Samsung Galaxy Store between 2018 and 2020. The watchface had over 200k downloads and an average rating of 4.8/5.",
-            "tech": {
-                "": ["Galaxy Watch Studio"]
-            }
-            , 
+            "scrollContainerItems": {
+                "Made with": {
+                    "": ["Galaxy Watch Studio", "Photoshop"]
+                }, "media": [    
+                    ["User Review", "cli_review.jpeg", "l", 
+                    "Screenshot of a user review with 5 stars posted on November 2019 reading 'This is honestly genius work and very creative. Thank you for creating this! Not only is it cool and unique, but it's informative as well. That's surprisingly kind of rare to find, and you've seemed to of hit the sweet spot. I especially love the blinking cursor as well! You can have it on a black background, or you can double tap it for a blue one. Of course I chose black to save battery, but again it's a nice touch. Well worth the money!'"]
+            ]
+            },
             "links": {
                 "read_more": ""
             },
-            "logo": "cli_face.jpeg",
-            "media": [
-                ["User Review", "cli_review.jpeg", "l"]
-            
-            ]
+            "logo": "cli_face.jpeg"
         }
     ]
 }

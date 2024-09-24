@@ -79,14 +79,13 @@ const ScrollContainer = ({scrollContainerItems}) => {
      
                       return(
                     <img src={`/src/assets/media/${path}`} alt={altText} 
-                      className={` inline-block 
-                        snap-start
+                      className={` inline-block snap-start
                         //Set dimensions based on aspect ratio                 
-                      ${aspectRatio == "p" && ('h-[100%]')} // portrait
+                      ${aspectRatio == "p" && ('h-[100%] w-auto')} // portrait
                       ${aspectRatio == "s" && ('max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
-                      ${aspectRatio == "l" && ('w-[100%] h-auto max-h-[90%] my-[5%]')} // landscape
-                      ${aspectRatio == undefined && ('max-h-[95%] max-w-[95%] w-auto h-auto my-[5%]')} // undefined
-                      border-2 border-slate-500 rounded-lg mx-2`} />
+                      ${aspectRatio == "l" && ('w-[100%] h-auto my-[10%]')} // landscape
+                      ${aspectRatio == undefined && ('w-full h-auto my-[5%]')} // undefined
+                      border-2 border-slate-500 rounded-lg mx-2 object-contain`} />
                       )
                   }
             }

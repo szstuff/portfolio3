@@ -72,6 +72,8 @@ All items should have an `id`, `type`, and `title`.
 - Restructure JSON files/parsing to be more flexible with custom titles and bullet points (instead of "Technologies")
 - [maybe] In DetailCard Component, move buttons inside to overview so they display next to the description 
 - Add highlighted projects on landing page (by e.g. defining "highlightedProjects: [1, 3, 5]" in JSON file)
+- Implement ALT text for videos 
+- [Personal] Fill in remaining alt text (from VR demo to network throughput utility)
 
 ##Bugs
 - [Intermittent] Some images are stretched in Safari (e.g. the images of the lock mechanism)
