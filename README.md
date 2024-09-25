@@ -81,4 +81,5 @@ All items should have an `id`, `type`, and `title`.
 - Socials links appear in the header on load before translating off screen (unsure if this needs to be fixed, it's kind of cute)
 - Same as above with card title, but it scrolls the other way 
 - In DetailCard Component, media items sometimes cover their text if it's long  
-- Some components appear to update uneccesarily often (e.g in ScrollContainer - uncomment the console.logs to see.) Implement React Memo?
+- Some components appear to update uneccesarily often (e.g in ScrollContainer - uncomment the console.logs to see. Implement React Memo?
+- Media items on index card view on very narrow or short screens scale poorly and don't take advantage of the available width/height. 

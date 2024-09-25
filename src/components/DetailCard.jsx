@@ -105,14 +105,14 @@ const DetailCard = ({item}) => {
           <hr className='col-span-full my-2'></hr>
 
           <div className='col-span-full mt-12 grid gap-6 space-y-4 grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-8 mb-12'>
-            {item.media && item.media.length > 0 && (
-              item.media.map(([title, media, aspectRatio], index) => {
+            {item.scrollContainerItems.media && item.scrollContainerItems.media.length > 0 && (
+              item.scrollContainerItems.media.map(([title, media, aspectRatio, altText], index) => {
               const extension = media.split(".").pop();  // Get file extension
                 if (extension === "mp4") {
                   return (
                     <div key={index} className={`flex-none w-fit
-                    {title ? "w-[90%]" : "w-[100%]"} 
-                    max-h-full snap-start`}>
+                    {title ? "h-[80%] mt-[20%]" : "h-[100%]"} 
+                     snap-start`}>
                       {title && (
                         <p className='text-center font-thin text-xl h-[5%]'> {title} </p>
                       )}
@@ -125,20 +125,18 @@ const DetailCard = ({item}) => {
                   );
                 } else {
                 return (
-                  <div key={index} className={`
-                        justify-center content-center
+                  <div key={index} className={`flex flex-col
                         //Set col dimensions based on aspect ratio (to accomodate title height) 
                       ${aspectRatio == "p" && ('row-span-2 col-span-1')} // portrait
-                      ${aspectRatio == "s" && ('row-span-1 col-span-1')} // portrait
-                      ${aspectRatio == "l" && ('row-span-1 col-span-full')} // portrait
+                      ${aspectRatio == "s" && ('row-span-1 col-span-1')} // square
+                      ${aspectRatio == "l" && ('row-span-1 col-span-full')} // landscape
 
                   `}>
                       {title && (
-                        <p className='text-center font-thin h-[5%] mb-[5%] w-fit md:text-xl lg:text-2xl'> {title} </p>
+                        <p className='font-thin w-fit text-sm md:text-base lg:text-xl grow'> {title} </p>
                       )} 
                     <img src={`/src/assets/media/${media}`} alt={`Media for ${item.title}`} 
-                      className={`
-                      {title == ? "h-[90%] py-[10%]" : "h-[100%]"} 
+                      className={` mt-auto
                       border-2 border-slate-500 rounded-lg`} />
                   </div>
                 );

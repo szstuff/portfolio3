@@ -81,7 +81,7 @@ const ScrollContainer = ({scrollContainerItems}) => {
                     <img src={`/src/assets/media/${path}`} alt={altText} 
                       className={` inline-block snap-start
                         //Set dimensions based on aspect ratio                 
-                      ${aspectRatio == "p" && ('h-[100%] w-auto')} // portrait
+                      ${aspectRatio == "p" && ('h-[100%] min-w-[60vw] w-auto')} // portrait
                       ${aspectRatio == "s" && ('max-w-[90%] h-auto max-h-[90%] my-[10%]')} // square
                       ${aspectRatio == "l" && ('w-[100%] h-auto my-[10%]')} // landscape
                       ${aspectRatio == undefined && ('w-full h-auto my-[5%]')} // undefined
@@ -99,7 +99,7 @@ const ScrollContainer = ({scrollContainerItems}) => {
 
   return (
     
-    <div className='col-span-full flex max-h-[70vh] w-fit overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6 horizontalscrollcontainer'>
+    <div className='col-span-full flex max-h-[70vh] max-w-max overflow-x-scroll snap-x snap-proximity scroll-p-6 snap-normal p-4 space-x-6 horizontalscrollcontainer'>
       {renderSection()}
         <div className='flex flex-row w-fit max-h-full snap-start'>
           {renderMedia(mediaItems)}

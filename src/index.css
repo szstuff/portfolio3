@@ -12,8 +12,10 @@ https://webflow.com/blog/elegant-color-palettes?utm_source=google&utm_medium=sea
 3: Hex codes: soft mint green #D1E8E2, deep teal #19747E, light sky blue #A9D6E5, light gray #E2E2E2
 */
 
-/* Only show images when display is over 500px wide x 750px tall OR over 1000px tall */
-@media (max-height: 750px), (max-height:1000px) and (max-width: 500px){
+/* Only show images when display is over 500px wide x 750px tall 
+OR over 1000px tall 
+OR */
+@media (max-height: 750px), (max-width:500px), (max-height:1000px) and (max-width: 500px){
   .horizontalscrollcontainer {
     display: none;
   }
