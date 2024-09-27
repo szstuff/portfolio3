@@ -83,3 +83,4 @@ All items should have an `id`, `type`, and `title`.
 - In DetailCard Component, media items sometimes cover their text if it's long  
 - Some components appear to update uneccesarily often (e.g in ScrollContainer - uncomment the console.logs to see. Implement React Memo?
 - Media items on index card view on very narrow or short screens scale poorly and don't take advantage of the available width/height. 
+- Mobile Safari: "Lateral lock mechanism" does not show up as a title in Header when scrolling on landing page. Maybe observer in Main.jsx picks Snake as highlighted card by mistake because it's short and fully in view. 
