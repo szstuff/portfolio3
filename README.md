@@ -66,21 +66,29 @@ All items should have an `id`, `type`, and `title`.
     ]
 }
 ```
-#TODO
-##Features/changes
+## TODO
+### Features
+#### High Priority
 - Apply colors using JSON config-file
-- Restructure JSON files/parsing to be more flexible with custom titles and bullet points (instead of "Technologies")
-- [maybe] In DetailCard Component, move buttons inside to overview so they display next to the description 
+- Customise other content with config file (e.g. "What im working on now", "See all my projects")
 - Add highlighted projects on landing page (by e.g. defining "highlightedProjects: [1, 3, 5]" in JSON file)
-- Implement ALT text for videos 
-- [Personal] Fill in remaining alt text (from VR demo to network throughput utility)
 
-##Bugs
-- [Intermittent] Some images are stretched in Safari (e.g. the images of the lock mechanism)
+#### Low Priority
+- [maybe] In DetailCard Component, move buttons inside to overview so they display next to the description 
+- Implement ALT text for videos 
+
+### Bugs
+#### High Priority 
+- In DetailCard Component, media items sometimes cover their text if it's long  
+- Mobile Safari: "Lateral lock mechanism" does not show up as a title in Header when scrolling on landing page. Maybe observer in Main.jsx picks Snake as highlighted card by mistake because it's short and fully in view. 
+
+#### Low Priority
+- [Intermittent Solved?] Some images are stretched in Safari (e.g. the images of the lock mechanism)
 - [Intermittent] Some cards load with the scrollContainer already having scrolled past the text items. Observed more often with the cards that have 16:9 videos as their first/only media item (e.g. the python network utilities)
 - Socials links appear in the header on load before translating off screen (unsure if this needs to be fixed, it's kind of cute)
 - Same as above with card title, but it scrolls the other way 
-- In DetailCard Component, media items sometimes cover their text if it's long  
 - Some components appear to update uneccesarily often (e.g in ScrollContainer - uncomment the console.logs to see. Implement React Memo?
 - Media items on index card view on very narrow or short screens scale poorly and don't take advantage of the available width/height. 
-- Mobile Safari: "Lateral lock mechanism" does not show up as a title in Header when scrolling on landing page. Maybe observer in Main.jsx picks Snake as highlighted card by mistake because it's short and fully in view. 
+
+### [Personal] Content 
+- Fill in remaining alt text (from VR demo to network throughput utility)

@@ -36,11 +36,10 @@ export const CardButton = ({type, link, text, mt, mb, ml, mr, width}) => {
                 </Link>
               )
             }
-             
             else {
               return (
               <a href={link} target='_blank' className={`mt-${mt} mb-${mb} ml-${ml} mr-${mr} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded-lg grow lg:max-w-[33%] text-center`}>
-                <button >
+                <button>
                   {type}
                 </button>
                 </a>
