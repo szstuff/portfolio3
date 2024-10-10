@@ -42,8 +42,12 @@ const Main = ({portfolioitems, scrollTo}) => {
         };
     }, []);
 
+    //Update currentCardID by picking the topmost element in view.
     useEffect(() => {
-        elementsInView.sort()
+        //Sort compares items as strings by default. This function compares the int value. 
+        elementsInView.sort(function(a, b) {
+            return a-b
+        })
         setCurrentCardId(elementsInView[0]) 
         }, [elementsInView]);
 
@@ -93,6 +97,7 @@ const Main = ({portfolioitems, scrollTo}) => {
                         /> 
                     )
                 } else {
+                    // If no applicable filters, don't render card 
                     return null
                 }
             }

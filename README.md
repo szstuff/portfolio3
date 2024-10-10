@@ -80,7 +80,7 @@ All items should have an `id`, `type`, and `title`.
 ### Bugs
 #### High Priority 
 - In DetailCard Component, media items sometimes cover their text if it's long  
-- Mobile Safari: "Lateral lock mechanism" does not show up as a title in Header when scrolling on landing page. Maybe observer in Main.jsx picks Snake as highlighted card by mistake because it's short and fully in view. 
+
 
 #### Low Priority
 - [Intermittent Solved?] Some images are stretched in Safari (e.g. the images of the lock mechanism)

@@ -93,7 +93,6 @@ const ScrollContainer = ({scrollContainerItems}) => {
     ) : (
         <></>
     )
-    console.log(renderMedia)
     // console.log("text items: " + textItems.length)
     // console.log("media items: " + mediaItems?.length)
 
